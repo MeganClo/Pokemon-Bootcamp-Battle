@@ -6,15 +6,18 @@ var userHealth = 100;
 var userAttack = "";
 var enemeyAttack = "";
 
+// setting array to randomly choose attack
+var possibleEnemyAttackVal = [5, 5, 10, 15];
+
+// randomly choosing the enemy attack
+enemyAttackValue = possibleEnemyAttackVal[Math.floor(Math.random() * possibleEnemyAttackVal.length)];
+console.log(enemyAttackValue);
+
 // targetting the buttons to attack
-var attack1 = document.getElementById("1");
-var attack2 = document.getElementById("2");
-var attack3 = document.getElementById("3");
-var attack4 = document.getElementById("4");
-
-// var attackVal = document.querySelectorAll("btn");
-// console.log(attackVal);
-
+var attack1 = document.getElementById("move1");
+var attack2 = document.getElementById("move2");
+var attack3 = document.getElementById("move3");
+var attack4 = document.getElementById("move4");
 
 // targetting the text to update heath/attack value
 var emenyHealthText = document.getElementById("enemyHealth");
@@ -28,40 +31,51 @@ var updateHealth = function() {
     userHealthText.textContent = userHealth;
 };
 
+// user fight function to be called on button clicks
 var userFight = function(attackVal) {
     console.log("fighting!");
     enemyHealth = enemyHealth-attackVal;
     updateHealth ();
+    enemyFight();
 };
 
+var enemyFight = function() {
+    console.log("enemy hitting!");
+    userHealth = userHealth-enemyAttackValue;
+    console.log(userHealth);
+}
 
+// button attack 1 
 attack1.addEventListener("click", function() {
     console.log("getting there");
-    var attackVal = document.getElementById("1").value;
+    var attackVal = document.getElementById("move1").value;
     console.log(attackVal);
     userFight(attackVal);
     console.log(enemyHealth);
 });
 
+// button attack 2
 attack2.addEventListener("click", function() {
     console.log("getting there");
-    var attackVal = document.getElementById("2").value;
+    var attackVal = document.getElementById("move2").value;
     console.log(attackVal);
     userFight(attackVal);
     console.log(enemyHealth);
 });
 
+// button attack 3
 attack3.addEventListener("click", function() {
     console.log("getting there");
-    var attackVal = document.getElementById("3").value;
+    var attackVal = document.getElementById("move3").value;
     console.log(attackVal);
     userFight(attackVal);
     console.log(enemyHealth);
 });
 
+// button attack 4
 attack4.addEventListener("click", function() {
     console.log("getting there");
-    var attackVal = document.getElementById("4").value;
+    var attackVal = document.getElementById("move4").value;
     console.log(attackVal);
     userFight(attackVal);
     console.log(enemyHealth);
