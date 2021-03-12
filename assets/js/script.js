@@ -12,6 +12,12 @@ var attack2 = document.getElementById("2");
 var attack3 = document.getElementById("3");
 var attack4 = document.getElementById("4");
 
+// getting the value from each button
+var attack1val = document.getElementById("1").value;
+var attack2val = document.getElementById("2").value;
+var attack3val = document.getElementById("3").value;
+var attack4val = document.getElementById("4").value;
+
 // targetting the text to update heath/attack value
 var emenyHealthText = document.getElementById("enemyHealth");
 var userHealthText = document.getElementById("userHealth");
@@ -24,7 +30,7 @@ userHealthText.textContent = userHealth;
 
 
 
-var fight = function() {
+var userfight = function() {
     console.log("fighting!");
 }
 
