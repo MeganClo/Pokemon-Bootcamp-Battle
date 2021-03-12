@@ -17,22 +17,26 @@ var attack4 = document.getElementById("4");
 
 
 var fight = function() {
-
+    console.log("fighting!");
 }
 
 
 attack1.addEventListener("click", function() {
     console.log("getting there");
+    fight();
 });
 
 attack2.addEventListener("click", function() {
     console.log("getting there");
+    fight();
 });
 
 attack3.addEventListener("click", function() {
     console.log("getting there");
+    fight();
 });
 
 attack4.addEventListener("click", function() {
     console.log("getting there");
+    fight();
 });
