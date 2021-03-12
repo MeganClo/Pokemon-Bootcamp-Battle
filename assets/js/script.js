@@ -1,6 +1,6 @@
 // setting the health both parties
-var userHeath = 100;
 var enemyHealth = 100;
+var userHealth = 100;
 
 // setting attack value
 var userAttack = "";
@@ -13,6 +13,14 @@ var attack3 = document.getElementById("3");
 var attack4 = document.getElementById("4");
 
 // targetting the text to update heath/attack value
+var emenyHealthText = document.getElementById("enemyHealth");
+var userHealthText = document.getElementById("userHealth");
+var enemyAttackText = document.getElementById("enemyAttack");
+var userAttackText = document.getElementById("userAttack");
+
+emenyHealthText.textContent = enemyHealth;
+userHealthText.textContent = userHealth;
+
 
 
 
