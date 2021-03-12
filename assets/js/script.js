@@ -36,13 +36,16 @@ var userFight = function(attackVal) {
     console.log("fighting!");
     enemyHealth = enemyHealth-attackVal;
     updateHealth ();
-    enemyFight();
+    setTimeout(function() {
+        enemyFight();
+    }, 5000);
 };
 
 var enemyFight = function() {
     console.log("enemy hitting!");
     userHealth = userHealth-enemyAttackValue;
     console.log(userHealth);
+    updateHealth();
 }
 
 // button attack 1 
