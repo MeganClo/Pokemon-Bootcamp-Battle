@@ -1,5 +1,10 @@
 var count = 0
 var randomUser = document.querySelector("#opponentHeader")
+var moveOne = document.querySelector("#move1")
+var moveTwo = document.querySelector("#move2")
+var moveThree = document.querySelector("#move3")
+var moveFour = document.querySelector("#move4")
+var pokemonDictionary ={}; 
 
 let getUserInfo = () => {
  fetch("https://randomuser.me/api/").then((response) => {
@@ -52,34 +57,86 @@ for (let i = 0; i < repos.length; i++) {
 }
 }
 
-let getPokemonInfo = () => {
-    var pokemon = ["pikachu", "charmander", 'bulbasaur', 'eevee', 'oddish', 'squirtle', 'bellsprout', 'butterfree', 'pidgeot', 'jigglypuff']
+/*async function getPoke (pd, pk) {
+   if(pk.length <=0)
+        return;
+    
+
+    let pokemon = pk[0];
+    let pokeRes = await fetch("https://pokeapi.co/api/v2/pokemon/" + pokemon);
+    let data = await pokeRes.json();
+    pd[pokemon] = data.moves[0].move.name;
+    console.log("Called: ", pk);
+   
+    getPoke(pd, pk.splice(0, pk.length - 1))
+    
+}
+
+
+async function a() {
+    let a = await getPoke(pokemonDictionary, ["pikachu", "charmander", 'bulbasaur', 'eevee']);
+    console.log(pokemonDictionary);
+}
+a(); */
+
+
+async function getPokemonInfo() {
+    
+    let pokemon = ["pikachu", "charmander", 'bulbasaur', 'eevee', 'oddish', 'squirtle', 'bellsprout', 'butterfree', 'pidgeot', 'jigglypuff']
     for (let i = 0; i < pokemon.length; i++) {
         fetch("https://pokeapi.co/api/v2/pokemon/" + pokemon[i]).then((pokeRes) => {
         // console.log(pokeRes)
         pokeRes.json().then((data) => {
-            // console.log(data.moves.length)
-            for (let j = 0; j < 4; j++) {
-                // console.log("hello")
-                console.log(data.moves[j].move.name)
+            // console.log(data)
+
+            pokemonDictionary[pokemon[0]] = data.moves[0].move.name; 
+            // for (let j = 0; j < 4; j++) {
+            //     // console.log(data.moves[j].move.name)
+            // }
+
+            if(pokemon[i] == 'pikachu') {
+                let movesObject1 = document.createElement("p")
+                movesObject1.textContent = data.moves[0].move.name
+    
+                moveOne.appendChild(movesObject1)
             }
-            // console.log(data.moves[0]);
-            // let movesObject1 = data.moves[0].move.name
-            // // count+=1
+            if(pokemon[i] == 'pikachu') {
+                let movesObject1 = document.createElement("p")
+                movesObject1.textContent = data.moves[1].move.name
+    
+                moveTwo.appendChild(movesObject1)
+            }
+            if(pokemon[i] == 'pikachu') {
+                let movesObject1 = document.createElement("p")
+                movesObject1.textContent = data.moves[2].move.name
+    
+                moveThree.appendChild(movesObject1)
+            }
+            if(pokemon[i] == 'pikachu') {
+                let movesObject1 = document.createElement("p")
+                movesObject1.textContent = data.moves[3].move.name
+    
+                moveFour.appendChild(movesObject1)
+            }
+
             // console.log(movesObject1)
             // let movesObject2 = data.moves[1].move.name
-            // // count+=1
+
             // console.log(movesObject2)
             // let movesObject3 = data.moves[2].move.name
-            // // count+=1
+
             // console.log(movesObject3)
             // let movesObject4 = data.moves[3].move.name
-            // // count+=1
+
             // console.log(movesObject4)
         })
     });
         
     }
+    console.log("pd", pokemonDictionary);
+    // console.log("pd", Object.values(pokemonDictionary));
+   
+    
     
 }
 getPokemonInfo()
