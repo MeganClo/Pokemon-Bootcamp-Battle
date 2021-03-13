@@ -1,5 +1,4 @@
 ![README](https://user-images.githubusercontent.com/77648727/111011992-2a959300-8350-11eb-82a8-9f3affb072fb.png)
-# Pokemon-Bootcamp-Battle
 
 # Name 
 Interactive Front-End Project #1: Pokemon Bootcamp Battles application
@@ -11,7 +10,7 @@ An gaming application leveraging the PokemonAPI and the Random User Generator AP
 See live application [here] (add later)
 
 
-### Built With :toolbox: 
+## Built With :toolbox: 
 - HTML
 - CSS
 - JavaScript
@@ -19,14 +18,18 @@ See live application [here] (add later)
 - Foundation
 
 
-### User Story 📖
+## User Story 📖
 > AS     
 > I WANT        
 > SO THAT I     
 
-### Acceptance Criteria ✅
+## Acceptance Criteria ✅
 > GIVEN       
 > WHEN       
 > THEN     
 
-# Project Visual :metal:
+## Project Visual :metal:
+
+
+
+## Authors, Acknowledgement, & Resources 🤝
