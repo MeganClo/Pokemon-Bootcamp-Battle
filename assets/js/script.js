@@ -1,5 +1,5 @@
 var count = 0
-var randomUser = document.querySelector("#randomUser")
+var randomUser = document.querySelector("#opponentHeader")
 
 let getUserInfo = () => {
  fetch("https://randomuser.me/api/").then((response) => {
@@ -12,7 +12,7 @@ let getUserInfo = () => {
 getUserInfo();
 
 let displayRepos = (repos) => {
-    console.log(repos);
+    // console.log(repos);
 
 // //     // loop over repos
 for (let i = 0; i < repos.length; i++) {
@@ -58,10 +58,24 @@ let getPokemonInfo = () => {
         fetch("https://pokeapi.co/api/v2/pokemon/" + pokemon[i]).then((pokeRes) => {
         // console.log(pokeRes)
         pokeRes.json().then((data) => {
+            // console.log(data.moves.length)
+            for (let j = 0; j < 4; j++) {
+                // console.log("hello")
+                console.log(data.moves[j].move.name)
+            }
             // console.log(data.moves[0]);
-            let movesObject1 = data.moves[count].move.name
-            count++
-            console.log(movesObject1)
+            // let movesObject1 = data.moves[0].move.name
+            // // count+=1
+            // console.log(movesObject1)
+            // let movesObject2 = data.moves[1].move.name
+            // // count+=1
+            // console.log(movesObject2)
+            // let movesObject3 = data.moves[2].move.name
+            // // count+=1
+            // console.log(movesObject3)
+            // let movesObject4 = data.moves[3].move.name
+            // // count+=1
+            // console.log(movesObject4)
         })
     });
         
