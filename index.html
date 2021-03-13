@@ -1,11 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootcamp Battle</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokémonBootcamp Battles</title>
+  <link rel="stylesheet" href="assets/css/foundation.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+  </style>
 </head>
+
 <body>
-    
+  <!--HERO-->
+  <!--Page Hero-->
+  <div class="hero-section">
+    <div class="hero-section-text">
+      <h1><img id="heroHeadline" src="https://i.imgur.com/WigFSVQ.png"></h1>
+      <h1 id="heroSubHeadline">Bootcamp Battles </h1>
+
+      <!--Take User Name-->
+      <form>
+        <div class="input-group">
+          <input id="submitUsername" placeholder="Enter your name" class="input-group-field" type="text">
+          <a id="submitUsernamebutton" class="input-group-button button"><strong>GO!</strong></a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--GAME SECTION-->
+  <div class="grid-container">
+    <!--USER GAME SECTION-->
+    <!--User side Pokemon information-->
+    <div class="grid-x">
+      <div class="cell small-6">
+        <div class="card">
+          <h5 id="userHeader">YOUR POKÉMON</h5>
+
+        <!--User Pokemon Picture-->
+          <div id="userPokemonPicture"><img style="max-width: 15vh;" src="https://i.imgur.com/x7EH4rz.png"></div>
+          <div class="card-section">
+            <!-- User Pokemon Health Bar-->
+            <h6 id="userPokemonName"> <img src="./assets/images/heart.png"> Jigglypuff</h6>
+            <div class="success progress" role="progressbar" tabindex="0" aria-valuenow="75" aria-valuemin="0"
+              aria-valuetext="75 percent" aria-valuemax="100">
+              <span class="progress-meter" style="width: 75%">
+                <span class="progress-meter-text">75%</span>
+              </span>
+            </div>
+            <!--User Pokemon game updates-->
+            <div id="userPokemonUpdates" class="small-3 medium-4 cell">
+              Updates about your Pokemon go here.
+            </div>
+          <!--User Pokemon move buttons-->
+            <div>
+              <button class="button" value="5" id="move1">Move 1</button>
+              <button class="button" value="10" id="move2">Move 2</button>
+              <button class="button" value="15" id="move3">Move 3</button>
+              <button class="button" value="5" id="move4">Move 4</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--End user Pokemon-->
+    <!--RANDOM USER GAME SECTION-->
+      <div class="cell small-6">
+        <div class="card">
+          <h5 id="opponentHeader">OPPONENT</h5>
+          <div id="randomPokemonPicture">
+          <img style="max-width: 15vh;" src="https://i.imgur.com/fWeYTpP.png">
+          </div>
+          <div class="card-section">
+            <!-- Opponent Pokemon Health Bar-->
+            <h6 id="randomPokemonName"> <img src="./assets/images/heart.png"> Pikachu</h6>
+            <div class="alert progress" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0"
+              aria-valuetext="25 percent" aria-valuemax="100">
+              <span class="progress-meter" style="width: 25%">
+                <span class="progress-meter-text">25%</span>
+              </span>
+            </div>
+            <!--OpponentPokemon-->
+            <div id="randomUpdates" class="small-3 medium-4 cell">
+              Updates about your Pokemon go here.</br>
+            </div>
+
+            <!--Picture placeholder-->
+            <div class="randomPicture">
+              <img class="circle" src="https://i.imgur.com/Z8n0oTX.png" alt=""> <p id="randomName">James</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!--Leaderboard-->
+    <div id="leaderboardCard" class="callout">
+      <h5 id="leaderHeader">LEADERBOARD</h5>
+      <div class="rank1"><img class="circle" src="./assets/images/1.png" alt=""></div>
+      <div class="rank2"><img class="circle" src="./assets/images/2.png" alt=""></div>
+      <div class="rank3"><img class="circle" src="./assets/images/3.png" alt=""></div>
+    </div>
+    <!--End Main container-->
+  </div>
+  <!--Scripts-->
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/vendor.js"></script>
+  <script src="assets/js/foundation.js"></script>
 </body>
+
 </html>
