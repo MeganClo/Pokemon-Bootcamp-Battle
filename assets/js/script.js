@@ -25,6 +25,17 @@ var userHealthText = document.getElementById("userHealth");
 var enemyAttackText = document.getElementById("enemyAttack");
 var userAttackText = document.getElementById("userAttack");
 
+
+
+var count = 0
+var randomUser = document.querySelector("#opponentHeader")
+var moveOne = document.querySelector("#move1")
+var moveTwo = document.querySelector("#move2")
+var moveThree = document.querySelector("#move3")
+var moveFour = document.querySelector("#move4")
+var pokemonDictionary = {};
+var pokemon = "pikachu"
+
 // updated health text
 var updateHealth = function() {
     emenyHealthText.textContent = enemyHealth;
@@ -38,6 +49,7 @@ var userFight = function(attackVal) {
     updateHealth ();
     setTimeout(function() {
         enemyFight();
+        
     }, 5000);
 };
 
@@ -84,15 +96,6 @@ attack4.addEventListener("click", function() {
     console.log(enemyHealth);
 });
 
-updateHealth();
-var count = 0
-var randomUser = document.querySelector("#opponentHeader")
-var moveOne = document.querySelector("#move1")
-var moveTwo = document.querySelector("#move2")
-var moveThree = document.querySelector("#move3")
-var moveFour = document.querySelector("#move4")
-var pokemonDictionary = {};
-var pokemon = "pikachu"
 
 let getUserInfo = () => {
     fetch("https://randomuser.me/api/").then((response) => {
@@ -102,7 +105,7 @@ let getUserInfo = () => {
     });
 
 };
-getUserInfo();
+
 
 let displayRepos = (repos) => {
     // console.log(repos);
@@ -143,7 +146,7 @@ let displayRepos = (repos) => {
         randomUser.appendChild(randomUserImg)
 
     }
-}
+};
 
 let getCurrentInfo = () => {
     let apiURL = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
@@ -173,4 +176,6 @@ let getCurrentInfo = () => {
         })
     })
 }
-getCurrentInfo()
+getCurrentInfo();
+updateHealth();
+getUserInfo();
