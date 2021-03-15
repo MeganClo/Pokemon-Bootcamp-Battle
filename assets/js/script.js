@@ -1,38 +1,30 @@
-
 // setting the health both parties
 var enemyHealth = 100;
 var userHealth = 100;
 
 // setting attack value
 var userAttack = "";
-var enemyAttack = "";
+var enemeyAttack = "";
 
 // setting array to randomly choose attack
 var possibleEnemyAttackVal = [5, 5, 10, 15];
 
 // randomly choosing the enemy attack
 enemyAttackValue = possibleEnemyAttackVal[Math.floor(Math.random() * possibleEnemyAttackVal.length)];
+console.log(enemyAttackValue);
 
-// targeting the health bars
-var userHealthBar = document.getElementById("userHealthBar");
-var userHealthStats = document.getElementById("userHealthStats");
-var userHealthEl = document.getElementById("user-Health");
-var enemyHealthBar = document.getElementById("enemyHealthBar");
-var enemyHealthStats = document.getElementById("enemyHealthStats");
-var enemyHealthEl = document.getElementById("enemy-health");
-
-// targeting the buttons to attack
+// targetting the buttons to attack
 var attack1 = document.getElementById("move1");
 var attack2 = document.getElementById("move2");
 var attack3 = document.getElementById("move3");
 var attack4 = document.getElementById("move4");
 
-// targeting all the buttons
-var attackButtons = document.getElementsByClassName("attackButtons")
-
-// targeting the text to update attack value
-var enemyAttackText = document.getElementById("userAttack");
+// targetting the text to update heath/attack value
+var emenyHealthText = document.getElementById("enemyHealth");
+var userHealthText = document.getElementById("userHealth");
+var enemyAttackText = document.getElementById("enemyAttack");
 var userAttackText = document.getElementById("userAttack");
+
 
 // adding moves to the page
 var randomUser = document.querySelector("#opponentHeader")
@@ -42,167 +34,72 @@ var moveThree = document.querySelector("#move3")
 var moveFour = document.querySelector("#move4")
 
 var userPokemon = document.querySelector("#userPokemonName")
+var userPokemonPlaceholder = document.querySelector("#userPokemonPicture")
 
 // creating a random user pokemon
-var pokemon = ["pikachu", "charmander", "bulbasaur", "eevee", "oddish", "squirtle", "bellsprout", "butterfree", "pidgeotto", "jigglypuff"] 
+var pokemon = ["pikachu", "charmander", "bulbasaur", "eevee", "oddish", "squirtle", "bellsprout", "butterfree", "pidgeotto", "jigglypuff"]
 const random = Math.floor(Math.random() * pokemon.length);
-var userRandomPokemon =  pokemon[random];
+var userRandomPokemon = pokemon[random];
 console.log(userRandomPokemon)
 
 // updated health text
-var updateHealth = function() {
-    // enemy health
-    enemyHealthBar.setAttribute("aria-valuenow", enemyHealth);
-    enemyHealthBar.setAttribute("aria-valuetext", enemyHealth);
-    enemyHealthStats.style.width = enemyHealth + "%";
-    enemyHealthEl.textContent = enemyHealth;
-    // user health
-    userHealthBar.setAttribute("aria-valuenow", userHealth);
-    userHealthBar.setAttribute("aria-valuetext", userHealth);
-    userHealthStats.style.width = userHealth + "%";
-    userHealthEl.textContent = userHealth;
-    // checking for the end of the game
-    if (userHealth <= 0) {
-        alert("YOU LOST!")
-    } else if (enemyHealth <= 0) {
-        alert("YOU WON!")
-    } else {
-        // setting class to change color of user's health bar
-        if (userHealth > 50) {
-            userHealthBar.setAttribute("class", "success progress");
-        } else if (userHealth > 25) {
-            userHealthBar.setAttribute("class", "warning progress");
-        } else userHealthBar.setAttribute("class", "alert progress");
-        // setting class to change color of enemy's health bar
-        if (enemyHealth > 50) {
-            enemyHealthBar.setAttribute("class", "success progress");
-        } else if (enemyHealth > 25) {
-            enemyHealthBar.setAttribute("class", "warning progress");
-        } else enemyHealthBar.setAttribute("class", "alert progress");
-    };
+var updateHealth = function () {
+    emenyHealthText.textContent = enemyHealth;
+    userHealthText.textContent = userHealth;
 };
 
 // user fight function to be called on button clicks
-var userFight = function(attackVal) {
+var userFight = function (attackVal) {
     console.log("fighting!");
-    enemyHealth = enemyHealth-attackVal;
-};
-
-// time interval used to wait until enemy attack to attack again
-var fightButtonClicks = function() {
-    for (var i = 0; i < attackButtons.length; i++) {
-        attackButtons[i].disabled = true;
-    };
-    setTimeout(function() {
+    enemyHealth = enemyHealth - attackVal;
+    updateHealth();
+    setTimeout(function () {
         enemyFight();
-        for (var i = 0; i < attackButtons.length; i++) {
-            attackButtons[i].disabled = false;
-        };
-    }, 1000);
+
+    }, 5000);
 };
 
-// enemy fight function 
-var enemyFight = function() {
-    if (userHealth > 0 && enemyHealth > 0) {
-        console.log("enemy hitting!");
-        var num = Math.floor(Math.random() * 10) + 1;
-        if (enemyAttackValue === 5) {
-            if (num < 3) {
-                enemyAttackText.textContent = ("(User Pokemon Name) blocked (attack name)"); 
-            } else {
-                userHealth = userHealth-enemyAttackValue;
-                enemyAttackText.textContent = ("(Enemy Pokemon Name) attacked (User Pokemon Name");
-                console.log(userHealth);
-                updateHealth();
-            }
-        } else if (enemyAttackValue === 10) {
-            if (num < 6) {
-                enemyAttackText.textContent = "(User Pokemon Name) blocked (attack name)";
-            } else {
-                userHealth = userHealth-enemyAttackValue;
-                enemyAttackText.textContent = ("Enemy Pokemon Name) attacked (User Pokemon Name");
-                console.log(userHealth);
-                updateHealth();
-            }
-        } else {
-            if (num < 8) {
-                enemyAttackText.textContent = "(User Pokemon Name) blocked (attack name)";
-            } else {
-                userHealth = userHealth-enemyAttackValue;
-                enemyAttackText.textContent = ("Enemy Pokemon Name) attacked (User Pokemon Name");
-                console.log(userHealth);
-                updateHealth();
-            };
-        };
-    };
-};
+var enemyFight = function () {
+    console.log("enemy hitting!");
+    userHealth = userHealth - enemyAttackValue;
+    console.log(userHealth);
+    updateHealth();
+}
 
-// button attack 1 (value 5)
-attack1.addEventListener("click", function() {
-    console.log("fight button 1");
-    var num = Math.floor(Math.random() * 10) + 1;
-    console.log(num);
-    if (num < 3) {
-        userAttackText.textContent = "(Enemy Pokemon Name) blocked (attack name)!";
-    } else {
-        var attackVal = document.getElementById("move1").value;
-        console.log(attackVal);
-        userFight(attackVal);
-        userAttackText.textContent = "(User Pokemon Name) attacked (Enemy Pokemon Name)";
-        updateHealth();
-    };
-    fightButtonClicks();
+// button attack 1 
+attack1.addEventListener("click", function () {
+    console.log("getting there");
+    var attackVal = document.getElementById("move1").value;
+    console.log(attackVal);
+    userFight(attackVal);
+    console.log(enemyHealth);
 });
 
-// button attack 2 (value 10)
-attack2.addEventListener("click", function() {
-    console.log("fight button 2");
-    var num = Math.floor(Math.random() * 10) + 1;
-    console.log(num);
-    if (num < 6) {
-        userAttackText.textContent = "(Enemy Pokemon Name) blocked (attack name)!";
-    } else {
-        var attackVal = document.getElementById("move2").value;
-        console.log(attackVal);
-        userFight(attackVal);
-        userAttackText.textContent = "(User Pokemon Name) attacked (Enemy Pokemon Name)";
-        updateHealth();
-    };
-    fightButtonClicks();
+// button attack 2
+attack2.addEventListener("click", function () {
+    console.log("getting there");
+    var attackVal = document.getElementById("move2").value;
+    console.log(attackVal);
+    userFight(attackVal);
+    console.log(enemyHealth);
 });
 
-// button attack 3 (value 15)
-attack3.addEventListener("click", function() {
-    console.log("fight button 3");
-    var num = Math.floor(Math.random() * 10) + 1;
-    console.log(num);
-    if (num < 8) {
-        userAttackText.textContent = "(Enemy Pokemon Name) blocked (attack name)!";
-    } else {
-        var attackVal = document.getElementById("move3").value;
-        console.log(attackVal);
-        userFight(attackVal);
-        userAttackText.textContent = "(User Pokemon Name) attacked (Enemy Pokemon Name)";
-        updateHealth();
-    };
-    fightButtonClicks();
+// button attack 3
+attack3.addEventListener("click", function () {
+    console.log("getting there");
+    var attackVal = document.getElementById("move3").value;
+    console.log(attackVal);
+    userFight(attackVal);
+    console.log(enemyHealth);
 });
 
-// button attack 4 (value 5)
-attack4.addEventListener("click", function() {
-    console.log("fight button 4");
-    var num = Math.floor(Math.random() * 10) + 1;
-    console.log(num);
-    if (num < 4) {
-        userAttackText.textContent = "(Enemy Pokemon Name) blocked (attack name)!";
-    } else {
-        var attackVal = document.getElementById("move4").value;
-        console.log(attackVal);
-        userFight(attackVal);
-        userAttackText.textContent = "(User Pokemon Name) attacked (Enemy Pokemon Name)";
-        updateHealth();
-    };
-    fightButtonClicks();
+// button attack 4
+attack4.addEventListener("click", function () {
+    console.log("getting there");
+    var attackVal = document.getElementById("move4").value;
+    console.log(attackVal);
+    userFight(attackVal);
+    console.log(enemyHealth);
 });
 
 
@@ -262,27 +159,36 @@ let getCurrentInfo = () => {
     fetch(apiURL).then((response) => {
         response.json().then((data) => {
 
-userPokemon.textContent = userRandomPokemon
+            //displaying random user pokemon name
+            userPokemon.textContent = userRandomPokemon
 
-                let movesObject1 = document.createElement("p")
-                movesObject1.textContent = data.moves[0].move.name
+            //displaying random user pokemon picture
+            var userPokemonImage = document.createElement("img")
+            var imageURL = "./assets/images/" + userRandomPokemon + ".png"
+            userPokemonImage.setAttribute("src", imageURL)
+            userPokemonImage.setAttribute("style", "max-width: 15vh")
+            console.log(userPokemonImage)
+            userPokemonPlaceholder.appendChild(userPokemonImage)
 
-                moveOne.appendChild(movesObject1)
+            let movesObject1 = document.createElement("p")
+            movesObject1.textContent = data.moves[0].move.name
 
-                let movesObject2 = document.createElement("p")
-                movesObject2.textContent = data.moves[1].move.name
+            moveOne.appendChild(movesObject1)
 
-                moveTwo.appendChild(movesObject2)
+            let movesObject2 = document.createElement("p")
+            movesObject2.textContent = data.moves[1].move.name
 
-                let movesObject3 = document.createElement("p")
-                movesObject3.textContent = data.moves[2].move.name
+            moveTwo.appendChild(movesObject2)
 
-                moveThree.appendChild(movesObject3)
+            let movesObject3 = document.createElement("p")
+            movesObject3.textContent = data.moves[2].move.name
 
-                let movesObject4 = document.createElement("p")
-                movesObject4.textContent = data.moves[3].move.name
+            moveThree.appendChild(movesObject3)
 
-                moveFour.appendChild(movesObject4)
+            let movesObject4 = document.createElement("p")
+            movesObject4.textContent = data.moves[3].move.name
+
+            moveFour.appendChild(movesObject4)
 
         })
     })
