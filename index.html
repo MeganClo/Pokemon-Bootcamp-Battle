@@ -43,10 +43,10 @@
           <div class="card-section">
             <!-- User Pokemon Health Bar-->
             <h6 id="userPokemonName"> <img src="./assets/images/heart.png"> Jigglypuff</h6>
-            <div class="success progress" role="progressbar" tabindex="0" aria-valuenow="75" aria-valuemin="0"
+            <div id= "userHealthBar" class="success progress" role="progressbar" tabindex="0" aria-valuemin="0"
               aria-valuetext="75 percent" aria-valuemax="100">
-              <span class="progress-meter" style="width: 75%">
-                <span class="progress-meter-text">75%</span>
+              <span id="userHealthStats" class="progress-meter" style="width: 75%">
+                <span class="progress-meter-text"><span id="user-Health"></span> %</span>
               </span>
             </div>
             <!--User Pokemon game updates-->
@@ -74,10 +74,10 @@
           <div class="card-section">
             <!-- Opponent Pokemon Health Bar-->
             <h6 id="randomPokemonName"> <img src="./assets/images/heart.png"> Pikachu</h6>
-            <div class="alert progress" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0"
+            <div id="enemyHealthBar" class="alert progress" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0"
               aria-valuetext="25 percent" aria-valuemax="100">
-              <span class="progress-meter" style="width: 25%">
-                <span class="progress-meter-text">25%</span>
+              <span id="enemyHealthStats" class="progress-meter" style="width: 25%">
+                <span class="progress-meter-text"><span id="enemy-health"></span>%</span>
               </span>
             </div>
             <!--OpponentPokemon-->

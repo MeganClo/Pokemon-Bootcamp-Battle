@@ -12,7 +12,14 @@ var possibleEnemyAttackVal = [5, 5, 10, 15];
 
 // randomly choosing the enemy attack
 enemyAttackValue = possibleEnemyAttackVal[Math.floor(Math.random() * possibleEnemyAttackVal.length)];
-console.log(enemyAttackValue);
+
+// targeting the health bars
+var userHealthBar = document.getElementById("userHealthBar");
+var userHealthStats = document.getElementById("userHealthStats");
+var userHealthEl = document.getElementById("user-Health");
+var enemyHealthBar = document.getElementById("enemyHealthBar");
+var enemyHealthStats = document.getElementById("enemyHealthStats");
+var enemyHealthEl = document.getElementById("enemy-health");
 
 // targeting the buttons to attack
 var attack1 = document.getElementById("move1");
@@ -42,8 +49,18 @@ var pokemon = "pikachu"
 
 // updated health text
 var updateHealth = function() {
+    // enemy health
     emenyHealthText.textContent = enemyHealth;
+    enemyHealthBar.setAttribute("aria-valuenow", enemyHealth);
+    enemyHealthBar.setAttribute("aria-valuetext", enemyHealth);
+    enemyHealthStats.style.width = enemyHealth + "%";
+    enemyHealthEl.textContent = enemyHealth;
+    // user health
     userHealthText.textContent = userHealth;
+    userHealthBar.setAttribute("aria-valuenow", userHealth);
+    userHealthBar.setAttribute("aria-valuetext", userHealth);
+    userHealthStats.style.width = userHealth + "%";
+    userHealthEl.textContent = userHealth;
 };
 
 // user fight function to be called on button clicks
@@ -65,6 +82,7 @@ var fightButtonClicks = function() {
     }, 4000);
 };
 
+// enemy fight function 
 var enemyFight = function() {
     console.log("enemy hitting!");
     var num = Math.floor(Math.random() * 10) + 1;
