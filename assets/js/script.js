@@ -30,12 +30,9 @@ var attack4 = document.getElementById("move4");
 // targeting all the buttons
 var attackButtons = document.getElementsByClassName("attackButtons")
 
-// targeting the text to update heath/attack value
-var emenyHealthText = document.getElementById("enemyHealth");
-var userHealthText = document.getElementById("userHealth");
+// targeting the text to update attack value
 var enemyAttackText = document.getElementById("userAttack");
 var userAttackText = document.getElementById("userAttack");
-
 
 
 var count = 0
@@ -50,17 +47,34 @@ var pokemon = "pikachu"
 // updated health text
 var updateHealth = function() {
     // enemy health
-    emenyHealthText.textContent = enemyHealth;
     enemyHealthBar.setAttribute("aria-valuenow", enemyHealth);
     enemyHealthBar.setAttribute("aria-valuetext", enemyHealth);
     enemyHealthStats.style.width = enemyHealth + "%";
     enemyHealthEl.textContent = enemyHealth;
     // user health
-    userHealthText.textContent = userHealth;
     userHealthBar.setAttribute("aria-valuenow", userHealth);
     userHealthBar.setAttribute("aria-valuetext", userHealth);
     userHealthStats.style.width = userHealth + "%";
     userHealthEl.textContent = userHealth;
+    // checking for the end of the game
+    if (userHealth <= 0) {
+        alert("YOU LOST!")
+    } else if (enemyHealth <= 0) {
+        alert("YOU WON!")
+    } else {
+        // setting class to change color of user's health bar
+        if (userHealth > 50) {
+            userHealthBar.setAttribute("class", "success progress");
+        } else if (userHealth > 25) {
+            userHealthBar.setAttribute("class", "warning progress");
+        } else userHealthBar.setAttribute("class", "alert progress");
+        // setting class to change color of enemy's health bar
+        if (enemyHealth > 50) {
+            enemyHealthBar.setAttribute("class", "success progress");
+        } else if (enemyHealth > 25) {
+            enemyHealthBar.setAttribute("class", "warning progress");
+        } else enemyHealthBar.setAttribute("class", "alert progress");
+    };
 };
 
 // user fight function to be called on button clicks
@@ -79,42 +93,43 @@ var fightButtonClicks = function() {
         for (var i = 0; i < attackButtons.length; i++) {
             attackButtons[i].disabled = false;
         };
-    }, 4000);
+    }, 1000);
 };
 
 // enemy fight function 
 var enemyFight = function() {
-    console.log("enemy hitting!");
-    var num = Math.floor(Math.random() * 10) + 1;
-    if (enemyAttackValue === 5) {
-        if (num < 3) {
-            enemyAttackText.textContent = ("(User Pokemon Name) blocked (attack name)"); 
+    if (userHealth > 0 && enemyHealth > 0) {
+        console.log("enemy hitting!");
+        var num = Math.floor(Math.random() * 10) + 1;
+        if (enemyAttackValue === 5) {
+            if (num < 3) {
+                enemyAttackText.textContent = ("(User Pokemon Name) blocked (attack name)"); 
+            } else {
+                userHealth = userHealth-enemyAttackValue;
+                enemyAttackText.textContent = ("(Enemy Pokemon Name) attacked (User Pokemon Name");
+                console.log(userHealth);
+                updateHealth();
+            }
+        } else if (enemyAttackValue === 10) {
+            if (num < 6) {
+                enemyAttackText.textContent = "(User Pokemon Name) blocked (attack name)";
+            } else {
+                userHealth = userHealth-enemyAttackValue;
+                enemyAttackText.textContent = ("Enemy Pokemon Name) attacked (User Pokemon Name");
+                console.log(userHealth);
+                updateHealth();
+            }
         } else {
-            userHealth = userHealth-enemyAttackValue;
-            enemyAttackText.textContent = ("Enemy Pokemon Name) attacked (User Pokemon Name");
-            console.log(userHealth);
-            updateHealth();
-        }
-    } else if (enemyAttackValue === 10) {
-        if (num < 6) {
-            enemyAttackText.textContent = "(User Pokemon Name) blocked (attack name)";
-        } else {
-            userHealth = userHealth-enemyAttackValue;
-            enemyAttackText.textContent = ("Enemy Pokemon Name) attacked (User Pokemon Name");
-            console.log(userHealth);
-            updateHealth();
-        }
-    } else {
-        if (num < 8) {
-            enemyAttackText.textContent = "(User Pokemon Name) blocked (attack name)";
-        } else {
-            userHealth = userHealth-enemyAttackValue;
-            enemyAttackText.textContent = ("Enemy Pokemon Name) attacked (User Pokemon Name");
-            console.log(userHealth);
-            updateHealth();
+            if (num < 8) {
+                enemyAttackText.textContent = "(User Pokemon Name) blocked (attack name)";
+            } else {
+                userHealth = userHealth-enemyAttackValue;
+                enemyAttackText.textContent = ("Enemy Pokemon Name) attacked (User Pokemon Name");
+                console.log(userHealth);
+                updateHealth();
+            };
         };
     };
-
 };
 
 // button attack 1 (value 5)
