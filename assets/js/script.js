@@ -26,15 +26,20 @@ var enemyAttackText = document.getElementById("enemyAttack");
 var userAttackText = document.getElementById("userAttack");
 
 
-
-var count = 0
+// adding moves to the page
 var randomUser = document.querySelector("#opponentHeader")
 var moveOne = document.querySelector("#move1")
 var moveTwo = document.querySelector("#move2")
 var moveThree = document.querySelector("#move3")
 var moveFour = document.querySelector("#move4")
-var pokemonDictionary = {};
-var pokemon = "pikachu"
+
+var userPokemon = document.querySelector("#userPokemonName")
+
+// creating a random user pokemon
+var pokemon = ["pikachu", "charmander", "bulbasaur", "eevee", "oddish", "squirtle", "bellsprout", "butterfree", "pidgeotto", "jigglypuff"] 
+const random = Math.floor(Math.random() * pokemon.length);
+var userRandomPokemon =  pokemon[random];
+console.log(userRandomPokemon)
 
 // updated health text
 var updateHealth = function() {
@@ -149,9 +154,11 @@ let displayRepos = (repos) => {
 };
 
 let getCurrentInfo = () => {
-    let apiURL = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
+    let apiURL = "https://pokeapi.co/api/v2/pokemon/" + userRandomPokemon;
     fetch(apiURL).then((response) => {
         response.json().then((data) => {
+
+userPokemon.textContent = userRandomPokemon
 
                 let movesObject1 = document.createElement("p")
                 movesObject1.textContent = data.moves[0].move.name
