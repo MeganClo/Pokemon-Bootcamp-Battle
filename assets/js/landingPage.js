@@ -7,7 +7,7 @@ var submitButton= function(event) {
     event.preventDefault();
     var userName = userNameEl.value.trim();
     console.log(userName);
-    console.log("i'm here with artur!");
+    location.href = "index.html";
 };
 
 console.log(buttonEl);
