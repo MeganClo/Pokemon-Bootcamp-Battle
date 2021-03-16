@@ -14,13 +14,13 @@
 
 <body>
   <!--HERO-->
-  <!--Page Hero-->
+  <!--Page Hero--><!--
   <div class="hero-section">
     <div class="hero-section-text">
       <h1><img id="heroHeadline" src="https://i.imgur.com/WigFSVQ.png"></h1>
       <h1 id="heroSubHeadline">Bootcamp Battles </h1>
 
-      <!--Take User Name-->
+      Take User Name-->
       <div id="userForm">
         <div class="input-group">
           <input id="submitUsername" placeholder="Enter your name" class="input-group-field" type="text">
@@ -31,6 +31,7 @@
   </div>
   <!--GAME SECTION-->
   <div class="grid-container">
+   <h1> Pokemon Bootcamp Battles</h1>
     <!--USER GAME SECTION-->
     <!--User side Pokemon information-->
     <div class="grid-x">
@@ -39,11 +40,12 @@
           <h5 id="userHeader">YOUR POKÉMON</h5>
 
         <!--User Pokemon Picture-->
-          <div id="userPokemonPicture"><img style="max-width: 15vh;" src="https://i.imgur.com/x7EH4rz.png"></div>
+          <!-- <div id="userPokemonPicture"><img style="max-width: 15vh;" src="https://i.imgur.com/x7EH4rz.png"></div> -->
+          <div id="userPokemonPicture"></div>
           <div class="card-section">
             <!-- User Pokemon Health Bar-->
-            <h6 id="userPokemonName"> <img src="./assets/images/heart.png"> Jigglypuff</h6>
-            <div id= "userHealthBar" class="progress" role="progressbar" tabindex="0" aria-valuemin="0"
+            <h6 id="userPokemonName"> <img src="./assets/images/heart.png"></h6>
+            <div id = "userHealthBar" class="success progress" role="progressbar" tabindex="0" aria-valuenow="75" aria-valuemin="0"
               aria-valuetext="75 percent" aria-valuemax="100">
               <span id="userHealthStats" class="progress-meter" style="width: 75%">
                 <span class="progress-meter-text"><span id="user-Health"></span> %</span>
@@ -52,6 +54,7 @@
             <!--User Pokemon game updates-->
             <div id="userPokemonUpdates" class="small-3 medium-4 cell">
               Updates about your Pokemon go here.
+              <h3><span id ="userAttack"></span></h3>
             </div>
           <!--User Pokemon move buttons-->
             <div>
@@ -84,7 +87,7 @@
             <div id="randomUpdates" class="small-3 medium-4 cell">
               Updates about your Pokemon go here.</br>
               <!-- <h3><span id ="enemyAttack"></span></h3> -->
-              <h3><span id ="userAttack"></span></h3>
+              <h3><span id ="enemyAttack"></span></h3>
             </div>
 
             <!--Picture placeholder-->

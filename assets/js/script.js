@@ -16,6 +16,7 @@ var possibleEnemyAttackVal = [5, 5, 10, 15];
 
 // randomly choosing the enemy attack
 enemyAttackValue = possibleEnemyAttackVal[Math.floor(Math.random() * possibleEnemyAttackVal.length)];
+console.log(enemyAttackValue);
 
 // targeting the health bars
 var userHealthBar = document.getElementById("userHealthBar");
@@ -25,28 +26,38 @@ var enemyHealthBar = document.getElementById("enemyHealthBar");
 var enemyHealthStats = document.getElementById("enemyHealthStats");
 var enemyHealthEl = document.getElementById("enemy-health");
 
-// targeting the buttons to attack
+// targetting the buttons to attack
 var attack1 = document.getElementById("move1");
 var attack2 = document.getElementById("move2");
 var attack3 = document.getElementById("move3");
 var attack4 = document.getElementById("move4");
 
 // targeting all the buttons
-var attackButtons = document.getElementsByClassName("attackButtons")
+var attackButtons = document.getElementsByClassName("attackButtons");
 
-// targeting the text to update attack value
-var enemyAttackText = document.getElementById("userAttack");
+// targetting the text to update attack value
+var enemyAttackText = document.getElementById("enemyAttack");
 var userAttackText = document.getElementById("userAttack");
 
+// var emenyHealthText = document.getElementById("enemyHealth");
+// var userHealthText = document.getElementById("userHealth");
 
-var count = 0
+
+// adding moves to the page
 var randomUser = document.querySelector("#opponentHeader")
 var moveOne = document.querySelector("#move1")
 var moveTwo = document.querySelector("#move2")
 var moveThree = document.querySelector("#move3")
 var moveFour = document.querySelector("#move4")
-var pokemonDictionary = {};
-var pokemon = "pikachu"
+
+var userPokemon = document.querySelector("#userPokemonName")
+var userPokemonPlaceholder = document.querySelector("#userPokemonPicture")
+
+// creating a random user pokemon
+var pokemon = ["pikachu", "charmander", "bulbasaur", "eevee", "oddish", "squirtle", "bellsprout", "butterfree", "pidgeotto", "jigglypuff"]
+const random = Math.floor(Math.random() * pokemon.length);
+var userRandomPokemon = pokemon[random];
+console.log(userRandomPokemon)
 
 // updated health text
 var updateHealth = function() {
@@ -100,6 +111,7 @@ var fightButtonClicks = function() {
     }, 1000);
 };
 
+
 // enemy fight function 
 var enemyFight = function() {
     if (userHealth > 0 && enemyHealth > 0) {
@@ -107,7 +119,7 @@ var enemyFight = function() {
         var num = Math.floor(Math.random() * 10) + 1;
         if (enemyAttackValue === 5) {
             if (num < 3) {
-                enemyAttackText.textContent = ("(User Pokemon Name) blocked (attack name)"); 
+                userAttackText.textContent = ("(User Pokemon Name) blocked (attack name)"); 
             } else {
                 userHealth = userHealth-enemyAttackValue;
                 enemyAttackText.textContent = ("(Enemy Pokemon Name) attacked (User Pokemon Name");
@@ -116,7 +128,7 @@ var enemyFight = function() {
             }
         } else if (enemyAttackValue === 10) {
             if (num < 6) {
-                enemyAttackText.textContent = "(User Pokemon Name) blocked (attack name)";
+                userAttackText.textContent = "(User Pokemon Name) blocked (attack name)";
             } else {
                 userHealth = userHealth-enemyAttackValue;
                 enemyAttackText.textContent = ("Enemy Pokemon Name) attacked (User Pokemon Name");
@@ -125,7 +137,7 @@ var enemyFight = function() {
             }
         } else {
             if (num < 8) {
-                enemyAttackText.textContent = "(User Pokemon Name) blocked (attack name)";
+                userAttackText.textContent = "(User Pokemon Name) blocked (attack name)";
             } else {
                 userHealth = userHealth-enemyAttackValue;
                 enemyAttackText.textContent = ("Enemy Pokemon Name) attacked (User Pokemon Name");
@@ -257,29 +269,40 @@ let displayRepos = (repos) => {
 };
 
 let getCurrentInfo = () => {
-    let apiURL = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
+    let apiURL = "https://pokeapi.co/api/v2/pokemon/" + userRandomPokemon;
     fetch(apiURL).then((response) => {
         response.json().then((data) => {
 
-                let movesObject1 = document.createElement("p")
-                movesObject1.textContent = data.moves[0].move.name
+            //displaying random user pokemon name
+            userPokemon.textContent = userRandomPokemon
 
-                moveOne.appendChild(movesObject1)
+            //displaying random user pokemon picture
+            var userPokemonImage = document.createElement("img")
+            var imageURL = "./assets/images/" + userRandomPokemon + ".png"
+            userPokemonImage.setAttribute("src", imageURL)
+            userPokemonImage.setAttribute("style", "max-width: 15vh")
+            console.log(userPokemonImage)
+            userPokemonPlaceholder.appendChild(userPokemonImage)
 
-                let movesObject2 = document.createElement("p")
-                movesObject2.textContent = data.moves[1].move.name
+            let movesObject1 = document.createElement("p")
+            movesObject1.textContent = data.moves[0].move.name
 
-                moveTwo.appendChild(movesObject2)
+            moveOne.appendChild(movesObject1)
 
-                let movesObject3 = document.createElement("p")
-                movesObject3.textContent = data.moves[2].move.name
+            let movesObject2 = document.createElement("p")
+            movesObject2.textContent = data.moves[1].move.name
 
-                moveThree.appendChild(movesObject3)
+            moveTwo.appendChild(movesObject2)
 
-                let movesObject4 = document.createElement("p")
-                movesObject4.textContent = data.moves[3].move.name
+            let movesObject3 = document.createElement("p")
+            movesObject3.textContent = data.moves[2].move.name
 
-                moveFour.appendChild(movesObject4)
+            moveThree.appendChild(movesObject3)
+
+            let movesObject4 = document.createElement("p")
+            movesObject4.textContent = data.moves[3].move.name
+
+            moveFour.appendChild(movesObject4)
 
         })
     })
