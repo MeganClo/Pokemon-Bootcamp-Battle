@@ -1,8 +1,3 @@
-// capturing username
-var userNameEl = document.getElementById("submitUsername");
-var buttonEl = document.getElementById("submitUsernamebutton");
-
-
 // setting the health both parties
 var enemyHealth = 100;
 var userHealth = 100;
@@ -308,14 +303,6 @@ let getCurrentInfo = () => {
     })
 };
 
-var submitButton= function(event) {
-    event.preventDefault();
-    var userName = userNameEl.value.trim();
-    console.log(userName);
-    console.log("i'm here with artur!");
-}
-
-buttonEl.addEventListener("click", submitButton);
 
 getCurrentInfo();
 updateHealth();
