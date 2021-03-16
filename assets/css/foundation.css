@@ -68,7 +68,7 @@ align-items: center;
   .hero-section {
     background: url("https://i.imgur.com/sEJsZpb.png") 50% no-repeat;
     background-size: cover;
-    height: 60vh;
+    height: 100vh;
     text-align: center;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -86,17 +86,11 @@ align-items: center;
     text-shadow: 1px 1px 2px #0a0a0a;
   }
   
-  .input-group-rounded {
-    .input-group-field {
-      border-radius: 5000px 0 0 5000px;
-      padding-left: 1rem;
-    }
-  
     .input-group-button .button {
       border-radius:  0 5000px 5000px 0;
       font-size: 0.8rem;
     }
-  }
+  
   .circle {
     border-radius: 50%;
     height: 7vh;
@@ -140,9 +134,7 @@ align-items: center;
 
 
     /* CUSTOM STUFF END*/
-body {
-  margin: 0; 
-  background-color: #09174e;} !important
+
 
 h1 {
   font-size: 2em;
@@ -2684,7 +2676,7 @@ ul.no-bullet, ol.no-bullet {
     position: relative;
     top: 0.4em;
     display: inline-block;
-    float: right;
+   
     margin-left: 1em; }
   .button.dropdown.hollow::after, .button.dropdown.clear::after {
     border-top-color: #1779ba; }
@@ -4357,7 +4349,6 @@ a.thumbnail {
   border-right-style: solid;
   border-color: transparent #1779ba transparent transparent;
   display: inline-block;
-  vertical-align: middle;
   margin-right: 0.75rem; }
 
 .dropdown.menu > li.opens-left > .is-dropdown-submenu {
