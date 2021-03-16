@@ -4,7 +4,7 @@ var userHealth = 100;
 
 // setting attack value
 var userAttack = "";
-var enemeyAttack = "";
+var enemyAttack = "";
 
 // setting array to randomly choose attack
 var possibleEnemyAttackVal = [5, 5, 10, 15];
