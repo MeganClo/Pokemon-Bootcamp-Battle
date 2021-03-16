@@ -5,6 +5,93 @@
  * https://get.foundation
  * Licensed under MIT Open Source
  */
+
+
+ body{
+   background: url(http://static.pexels.com/wp-content/uploads/2014/07/darkness-dawn-dusk-2073.jpg) no-repeat; /*change out image here to be pokemon specific */
+   background-size: 1920px 1000px;
+ }
+ 
+/*currently this impacts button to show modal*/
+ .show{
+   width: 150px;
+   height: 40px;
+   padding: 15px 15px 15px 15px;
+   background: #e74c3c;
+   color: #fff;
+   border-radius: 5px;
+   border: 0;
+   border-bottom: 2px solid #c0392b;
+   cursor: pointer;
+   
+ }
+
+ 
+ .close{
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 35px;
+   height: 30px;
+   background: rgb(65, 3, 236);
+   color: #fff;
+   cursor: pointer;
+   border: 0;
+ }
+ 
+
+ 
+ .mask{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(52, 73, 94, 0.8);
+   z-index: 50;
+   visibility: hidden;
+   
+   opacity: 0;
+   
+   transition: 0.7s;
+ }
+ 
+
+ 
+ .modal{
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   width: 400px;
+   height: 300px;
+   margin-left: -200px;
+   margin-top: -150px;
+   padding: 15px 15px 15px 15px;
+   background: white;
+   z-index: 100;
+   visibility: hidden;
+   
+   opacity: 0;
+   
+   transition: 0.5s ease-out;
+   
+   transform: translateY(45px);
+ }
+ 
+ 
+ .active{
+   visibility: visible;
+   opacity: 1;
+ }
+ 
+ 
+ .active + .modal{
+   visibility: visible;
+   opacity: 1;
+   transform: translateY(0);
+ }
+ /*end modal stuff */
+
 @media print, screen and (min-width: 40em) {
   .reveal, .reveal.tiny, .reveal.small, .reveal.large {
     right: auto;
