@@ -7,10 +7,7 @@
  */
 
 
- body{
-   background: url(http://static.pexels.com/wp-content/uploads/2014/07/darkness-dawn-dusk-2073.jpg) no-repeat; /*change out image here to be pokemon specific */
-   background-size: 1920px 1000px;
- }
+
  
 /*currently this impacts button to show modal*/
  .show{
