@@ -2,7 +2,6 @@
 var userNameEl = document.getElementById("submitUsername");
 var buttonEl = document.getElementById("submitUsernamebutton");
 
-
 // setting the health both parties
 var enemyHealth = 100;
 var userHealth = 100;
