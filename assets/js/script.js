@@ -1,9 +1,7 @@
-// capturing the user name
-// var userNameSubmit = document.getElementById("userForm");
-// var submitName = document.getElementById("submitUsername");
-// var userName = "";
-var userName = document.getElementById("submitUsername").value;
-console.log(userName);
+// capturing username
+var userNameEl = document.getElementById("submitUsername");
+var buttonEl = document.getElementById("submitUsernamebutton");
+
 
 // setting the health both parties
 var enemyHealth = 100;
@@ -66,7 +64,7 @@ var updateHealth = function() {
     if (userHealth <= 0) {
         alert("YOU LOST!")
     } else if (enemyHealth <= 0) {
-        alert("YOU WON!")
+        alert("YOU WON! Your score is" + userHealth + "!");
     } else {
         // setting class to change color of user's health bar
         if (userHealth > 50) {
@@ -287,15 +285,16 @@ let getCurrentInfo = () => {
     })
 };
 
-// var getUserName = function(event) {
-//     event.preventDefault();
-//     console.log("hello");
-//     userName = submitName.value.trim();
-//     console.log(userName);
-// }
+var submitButton= function(event) {
+    event.preventDefault();
+    var userName = userNameEl.value.trim();
+    console.log(userName);
+    console.log("i'm here with artur!");
+}
 
-// userNameSubmit.addEventListener("submit", getUserName);
+buttonEl.addEventListener("click", submitButton);
 
 getCurrentInfo();
 updateHealth();
 getUserInfo();
+$(document).foundation();
