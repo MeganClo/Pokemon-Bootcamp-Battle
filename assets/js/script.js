@@ -34,7 +34,7 @@ var attack4 = document.getElementById("move4");
 // targeting all the buttons
 var attackButtons = document.getElementsByClassName("attackButtons");
 
-// targeting random user information placeholders
+// targeting opponent random user information placeholders
 var randomUser = document.querySelector("#randomPicture");
 var randomUpdates = document.querySelector("#randomUpdates");
 
@@ -46,7 +46,6 @@ var userAttackText = document.getElementById("userAttack");
 // var userHealthText = document.getElementById("userHealth");
 
 // adding moves to the page
-var randomUser = document.querySelector("#opponentHeader")
 var moveOne = document.querySelector("#move1")
 var moveTwo = document.querySelector("#move2")
 var moveThree = document.querySelector("#move3")
