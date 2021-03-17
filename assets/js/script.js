@@ -125,35 +125,34 @@ var fightButtonClicks = function() {
 // enemy fight function 
 var enemyFight = function() {
     if (userHealth > 0 && enemyHealth > 0) {
-        console.log("enemy hitting!");
         var num = Math.floor(Math.random() * 10) + 1;
         if (enemyAttackValue === 5) {
             if (num < 3) {
-                enemyAttackText.textContent = (`${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
+                enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} blocked attack from ${opponentRandomPokemon}!`); 
             } else {
                 userHealth = userHealth-enemyAttackValue;
-                enemyAttackText.textContent = (`${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
+                enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} got hit from ${opponentRandomPokemon}!`);
                 updateHealth();
             }
         } else if (enemyAttackValue === 10) {
             if (num < 6) {
-                enemyAttackText.textContent = (`${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
+                enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} blocked attack from ${opponentRandomPokemon}!`);
             } else {
                 userHealth = userHealth-enemyAttackValue;
-                enemyAttackText.textContent = (`${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
+                enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} got hit from ${opponentRandomPokemon}!`);
                 updateHealth();
             }
         } else {
             if (num < 8) {
-                enemyAttackText.textContent = (`${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
+                enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} blocked attack from ${opponentRandomPokemon}!`);
             } else {
                 userHealth = userHealth-enemyAttackValue;
-                enemyAttackText.textContent = (`${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
+                enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} got hit from ${opponentRandomPokemon}!`);
                 updateHealth();
             };
@@ -166,7 +165,7 @@ attack1.addEventListener("click", function() {
     console.log("fight button 1");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
-    userAttackText.textContent = (`${userRandomPokemon} attacked ${opponentRandomPokemon}!`);
+    userAttackText.textContent = (`Get 'em! ${userRandomPokemon} attacked ${opponentRandomPokemon}!`);
     if (num < 3) {
         enemyAttackText.textContent = (`${opponentRandomPokemon} blocked attack from ${userRandomPokemon}!`);
     } else {
@@ -184,7 +183,7 @@ attack2.addEventListener("click", function() {
     console.log("fight button 2");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
-    userAttackText.textContent = (`${userRandomPokemon} attacked ${opponentRandomPokemon}!`);
+    userAttackText.textContent = (`Get 'em! ${userRandomPokemon} attacked ${opponentRandomPokemon}!`);
     if (num < 6) {
         enemyAttackText.textContent = (`${opponentRandomPokemon} blocked attack from ${userRandomPokemon}!`);
     } else {
@@ -202,7 +201,7 @@ attack3.addEventListener("click", function() {
     console.log("fight button 3");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
-    userAttackText.textContent = (`${userRandomPokemon} attacked ${opponentRandomPokemon}!`);
+    userAttackText.textContent = (`Get 'em! ${userRandomPokemon} attacked ${opponentRandomPokemon}!`);
     if (num < 8) {
         enemyAttackText.textContent = (`${opponentRandomPokemon} blocked attack from ${userRandomPokemon}!`);
     } else {
@@ -220,7 +219,7 @@ attack4.addEventListener("click", function() {
     console.log("fight button 4");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
-    userAttackText.textContent = (`${userRandomPokemon} attacked ${opponentRandomPokemon}!`);
+    userAttackText.textContent = (`Get 'em! ${userRandomPokemon} attacked ${opponentRandomPokemon}!`);
     if (num < 4) {
         enemyAttackText.textContent = (`${opponentRandomPokemon} blocked attack from ${userRandomPokemon}!`);
     } else {
