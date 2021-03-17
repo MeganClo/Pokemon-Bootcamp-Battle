@@ -25,12 +25,12 @@ See live application [here](http://meganclo.github.io/Pokemon-Bootcamp-Battle)
 
 
 ## Built With :toolbox: 
--[x] HTML
--[x] CSS
--[x] JavaScript
--[x] jQuery
--[x] Foundation
--[x] Figma
+- [x] HTML
+- [x] CSS
+- [x] JavaScript
+- [x] jQuery
+- [x] Foundation
+- [x] Figma
 
 
 ## User Story 📖
