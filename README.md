@@ -32,4 +32,7 @@ See live application [here] (add later)
 
 
 
-## Authors, Acknowledgement, & Resources 🤝
+## Authors
+Yevgeniya Terlyuk
+
+# Acknowledgement, & Resources 🤝
