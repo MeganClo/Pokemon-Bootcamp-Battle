@@ -352,7 +352,6 @@ let getCurrentInfo = () => {
     })
 };
 
-<<<<<<< HEAD
 // getting from API and displaying opponent's pokemon and moves
 let opponentInfo = () => {
     let apiURL = "https://pokeapi.co/api/v2/pokemon/" + opponentRandomPokemon;
@@ -382,7 +381,6 @@ let opponentInfo = () => {
     })
 };
 
-=======
 var gameEnd = function() {
     var score = { 
         score: userHealth,
@@ -408,9 +406,8 @@ var gameEnd = function() {
 //     var leaderboard = document.getElementById("leaderboardCard");
 //     leaderboard.appendChild(rank1).innerHTML = highscores[0].name + "             " + highscores[0].score
 // };
->>>>>>> 5c8fe640e5c5401f07c90f9d948eb11e50d8a0dc
 
-displayScores();
+// displayScores();
 getCurrentInfo();
 updateHealth();
 getUserInfo();
