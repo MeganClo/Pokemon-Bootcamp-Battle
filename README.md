@@ -4,7 +4,7 @@
 Interactive Front-End Project #1: Pokemon Bootcamp Battles application
 
 ### Description
-An gaming application leveraging the PokemonAPI and the Random User Generator API.
+An gaming application leveraging the PokemonAPI and the Random .User Generator API.
 
 ### Live Application Link :eyes:
 See live application [here] (add later)
