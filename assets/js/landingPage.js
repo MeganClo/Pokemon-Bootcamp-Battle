@@ -8,7 +8,7 @@ var submitButton= function(event) {
     var userName = userNameEl.value.trim();
     console.log(userName);
     localStorage.setItem("Name", userName);
-    location.href = "index.html";
+    location.href = "fightpage.html";
 };
 
 console.log(buttonEl);

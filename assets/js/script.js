@@ -364,7 +364,7 @@ var gameEnd = function() {
 //     leaderboard.appendChild(rank1).innerHTML = highscores[0].name + "             " + highscores[0].score
 // };
 
-displayScores();
+// displayScores();
 getCurrentInfo();
 updateHealth();
 getUserInfo();
