@@ -34,5 +34,6 @@ See live application [here] (add later)
 
 ## Authors
 Yevgeniya Terlyuk
+Megan Close
 
 # Acknowledgement, & Resources 🤝
