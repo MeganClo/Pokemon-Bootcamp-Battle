@@ -6,17 +6,11 @@ console.log(userName);
 var enemyHealth = 100;
 var userHealth = 100;
 
-// setting array to hold highscores to display
-highscores = JSON.parse(localStorage.getItem("highscores"));
-if (!highscores) {
-    highscores = [];
-};
-
 // setting attack value
 var userAttack = "";
 var enemyAttack = "";
 
-// setting array to randomly choose enemy attack
+// setting array to randomly choose attack
 var possibleEnemyAttackVal = [5, 5, 10, 15];
 
 // randomly choosing the enemy attack
@@ -92,8 +86,7 @@ var updateHealth = function() {
     if (userHealth <= 0) {
         alert("YOU LOST!")
     } else if (enemyHealth <= 0) {
-        alert("YOU WON! Congratulations " + userName + ". Your score is " + userHealth + "!");
-        gameEnd();
+        alert("YOU WON! Your score is" + userHealth + "!");
     } else {
         // setting class to change color of user's health bar
         if (userHealth > 50) {
@@ -395,7 +388,6 @@ $(".show").on("click", function(){
 //     leaderboard.appendChild(rank1).innerHTML = highscores[0].name + "             " + highscores[0].score
 // };
 
-// displayScores();
 getCurrentInfo();
 updateHealth();
 getUserInfo();
