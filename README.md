@@ -4,9 +4,9 @@
 Interactive Front-End Project #1: Pokemon Bootcamp Battles application
 
 ## Authors
-- Yevgeniya Terlyuk      
-- Megan Close      
-- Sarah Durkin    
+> Yevgeniya Terlyuk           
+> Megan Close      
+> Sarah Durkin    
 
 ### Description
 A simple gaming application leveraging the PokeAPI and the Random User Generator API where users take turns and points are subtracted based on the move selected. The player who survives wins!
