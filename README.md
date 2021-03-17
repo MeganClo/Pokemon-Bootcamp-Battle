@@ -40,11 +40,11 @@ See live application [here](http://meganclo.github.io/Pokemon-Bootcamp-Battle)
 
 ## Requirements ✅
 #### Tech:
-> Application uses at least two server-side APIs: PokeAPI & Random User API.      
-> Application uses client-side storage to show a game leaderboard.
-> Application uses modals.   
-> Application uses Foundation.
-> Application is interactive.
+> Application uses at least two server-side APIs: PokeAPI & Random User API.        
+> Application uses client-side storage to show a game leaderboard.       
+> Application uses modals.      
+> Application uses Foundation.       
+> Application is interactive.      
  
 ## Project Visual :metal:
 ![project image](https://i.imgur.com/fGPIrnD.png) 
