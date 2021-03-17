@@ -377,17 +377,6 @@ $(".show").on("click", function(){
   });
 
 
-// var displayScores = function() {
-//     console.log(highscores);
-//     console.log(highscores[0].score);
-//     var rank1 = document.getElementById("rank1");
-//     console.log(rank1);
-//     var rank2 = document.querySelector("rank2");
-//     var rank3 = document.querySelector("rank3");
-//     var leaderboard = document.getElementById("leaderboardCard");
-//     leaderboard.appendChild(rank1).innerHTML = highscores[0].name + "             " + highscores[0].score
-// };
-
 getCurrentInfo();
 updateHealth();
 getUserInfo();

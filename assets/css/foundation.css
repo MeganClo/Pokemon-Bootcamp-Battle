@@ -148,6 +148,26 @@ align-items: center;
 
 }
 
+ol {
+  list-style: none;
+  counter-reset: item;
+}
+li {
+  counter-increment: item;
+  margin-bottom: 5px;
+}
+li:before {
+  margin-right: 10px;
+  content: counter(item);
+  background: darkblue;
+  border-radius: 100%;
+  font-weight: bold;
+  color: white;
+  width: 1.7em;
+  text-align: center;
+  display: inline-block;
+}
+
 
   .hero-section {
     background: url("https://i.imgur.com/sEJsZpb.png") 50% no-repeat;
