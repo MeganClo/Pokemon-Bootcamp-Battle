@@ -7,6 +7,7 @@ var submitButton= function(event) {
     event.preventDefault();
     var userName = userNameEl.value.trim();
     console.log(userName);
+    localStorage.setItem("Name", userName);
     location.href = "index.html";
 };
 

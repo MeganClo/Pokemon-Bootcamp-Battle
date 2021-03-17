@@ -1,12 +1,22 @@
+// getting username from landing page via local storage
+var userName = localStorage.getItem("Name");
+console.log(userName);
+
 // setting the health both parties
 var enemyHealth = 100;
 var userHealth = 100;
+
+// setting array to hold highscores to display
+highscores = JSON.parse(localStorage.getItem("highscores"));
+if (!highscores) {
+    highscores = [];
+};
 
 // setting attack value
 var userAttack = "";
 var enemyAttack = "";
 
-// setting array to randomly choose attack
+// setting array to randomly choose enemy attack
 var possibleEnemyAttackVal = [5, 5, 10, 15];
 
 // randomly choosing the enemy attack
@@ -70,7 +80,8 @@ var updateHealth = function() {
     if (userHealth <= 0) {
         alert("YOU LOST!")
     } else if (enemyHealth <= 0) {
-        alert("YOU WON! Your score is" + userHealth + "!");
+        alert("YOU WON! Congratulations " + userName + ". Your score is " + userHealth + "!");
+        gameEnd();
     } else {
         // setting class to change color of user's health bar
         if (userHealth > 50) {
@@ -303,7 +314,33 @@ let getCurrentInfo = () => {
     })
 };
 
+var gameEnd = function() {
+    var score = { 
+        score: userHealth,
+        name: userName
+    };
+    highscores.push(score);
+    highscores.sort((a,b) => {
+        return b.score - a.score;
+    });
+    highscores.splice(3);
+    localStorage.setItem("highscores", JSON.stringify(highscores));
+};
 
+
+
+// var displayScores = function() {
+//     console.log(highscores);
+//     console.log(highscores[0].score);
+//     var rank1 = document.getElementById("rank1");
+//     console.log(rank1);
+//     var rank2 = document.querySelector("rank2");
+//     var rank3 = document.querySelector("rank3");
+//     var leaderboard = document.getElementById("leaderboardCard");
+//     leaderboard.appendChild(rank1).innerHTML = highscores[0].name + "             " + highscores[0].score
+// };
+
+displayScores();
 getCurrentInfo();
 updateHealth();
 getUserInfo();
