@@ -3,6 +3,11 @@
 # Name 
 Interactive Front-End Project #1: Pokemon Bootcamp Battles application
 
+## Authors
+- Yevgeniya Terlyuk      
+- Megan Close      
+- Sarah Durkin    
+
 ### Description
 An gaming application leveraging the PokeAPI and the Random .User Generator API.
 
@@ -25,6 +30,7 @@ See live application [here](http://meganclo.github.io/Pokemon-Bootcamp-Battle)
 - JavaScript
 - jQuery
 - Foundation
+- Figma
 
 
 ## User Story 📖
@@ -34,38 +40,30 @@ See live application [here](http://meganclo.github.io/Pokemon-Bootcamp-Battle)
 
 ## Requirements ✅
 #### Tech:
-> Application uses at least two server-side APIs.      
-> Application uses client-side storage to store persistent data.      
-> Application doesn't use JS alerts, prompts, or confirms (uses modals instead).      
-> Application uses a CSS framework other than Bootstrap.      
-> Application is interactive (accepts and responds to user input).      
-
-#### Concept: 
-> Application should be a unique and novel idea.      
-
-#### Deployment:
-> Application deployed at live URL and loads with no errors.      
-> Application GitHub URL submitted.      
-> Portfolio at live URL submitted, featuring project.      
-> Repository follows best practices for file structure and naming conventions.      
-
-#### Repo Quality:
-> Repository follows best practices for class/id-naming conventions, indentation, quality comments, etc.      
-> Repository contains multiple descriptive commit messages.      
-> README file has description, screenshot, and link to deployed application.      
-> Application user experience is intuitive, polished, responsive and easy to navigate.      
-
+> Application uses at least two server-side APIs: PokeAPI & Random User API.      
+> Application uses client-side storage to show a game leaderboard.
+> Application uses modals.   
+> Application uses Foundation.
+> Application is interactive.
+ 
 ## Project Visual :metal:
-
-
 ![project image](https://i.imgur.com/fGPIrnD.png) 
 
-## Authors
-Yevgeniya Terlyuk      
-Megan Close      
-Sarah Durkin      
+
+#### Wireframes and Design Assets 
+![figmathumbnail](https://i.imgur.com/QlIs6Yd.pnghttps://i.imgur.com/QlIs6Yd.png)
+
+[Figma Assets](https://www.figma.com/file/fZvBe19Q391esqf7GfZAE0/Bootcamp-Project?node-id=0%3A1)
+  
 
 # Acknowledgement & Resources 🤝
 
-[CodePen 'Simple Modals](https://codepen.io/reidark/pen/FEueH)      
+#### Documentation
+[Foundation Documentation](https://get.foundation/frameworks-docs.html)
+
+#### Coding Examples
+[CodePen 'Simple Modals'](https://codepen.io/reidark/pen/FEueH)
+
+#### Design
+[Figma Application & Community Resources](https://www.figma.com/)
 [Pokemon Images from stickpng.com](https://www.stickpng.com/img/games/pokemon/pikachu-pokemon)      
