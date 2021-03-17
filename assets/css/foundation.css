@@ -6,9 +6,32 @@
  * Licensed under MIT Open Source
  */
 
+ #randomUpdates{
+  height: 8rem;
+  min-width: 35rem;
+  font-size: large;
 
+}
 
+ #enemyAttack
+ {
+  text-align: center;
+  flex-wrap: wrap;
+  font-size: large;
+}
+
+ #userPokemonUpdates {
+   height: 8rem;
+   min-width: 35rem;
+   font-size: large;
+
+ }
  
+ #userAttack {
+   text-align: center;
+   flex-wrap: wrap;
+   font-size: large;
+ }
 /*currently this impacts button to show modal*/
  .show{
    width: 150px;
@@ -236,12 +259,10 @@ align-items: center;
   #move1, #move2, #move3, #move4 {
     padding-left: 2vw;
     padding-right: 2vw;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    height: 50px !important;
     margin: .15vw .15vw .15vw .15vw;
     border-radius: 6px;
-    font-size: 1rem;
-    align-items: center;
+    font-size: .9rem;
     font-weight: bolder;
     background-color: #2652FD;
     border-color: #09174e;
@@ -312,7 +333,7 @@ select,
 textarea {
   font-family: inherit;
   font-size: 100%;
-  line-height: 1.15;
+  line-height: 1;
   margin: 0; }
 
 button,
@@ -451,6 +472,7 @@ button {
   border: 0;
   border-radius: 0;
   background: transparent;
+  max-height: fit-content;
   line-height: 1;
   cursor: auto; }
   [data-whatinput='mouse'] button {
