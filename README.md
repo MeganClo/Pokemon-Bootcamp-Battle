@@ -9,9 +9,9 @@ Interactive Front-End Project #1: Pokemon Bootcamp Battles application
 - Sarah Durkin    
 
 ### Description
-An gaming application leveraging the PokeAPI and the Random .User Generator API.
+A simple gaming application leveraging the PokeAPI and the Random User Generator API where users take turns and points are subtracted based on the move selected. The player who survives wins!
 
-- A random opponent is assignned from the Random User API
+- A random opponent is assigned from the Random User API
 - A random Pokemon is assigned to the user and the opponent
 - Moves are pulled in to the user's buttons from the Poke API
 - The user can select moves in a back and forth exchange with their opponent until one runs out of Health
@@ -25,12 +25,12 @@ See live application [here](http://meganclo.github.io/Pokemon-Bootcamp-Battle)
 
 
 ## Built With :toolbox: 
-- HTML
-- CSS
-- JavaScript
-- jQuery
-- Foundation
-- Figma
+-[x] HTML
+-[x] CSS
+-[x] JavaScript
+-[x] jQuery
+-[x] Foundation
+-[x] Figma
 
 
 ## User Story 📖
