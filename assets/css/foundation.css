@@ -184,7 +184,25 @@ li:before {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  /* CUSTOM STUFF HERE*/
+
+.hero-section2 {
+    background: url("https://i.imgur.com/9vvgrbU.png") 50% no-repeat;
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+
+
   .hero-section .hero-section-text {
     color: #fefefe;
     text-shadow: 1px 1px 2px #0a0a0a;
@@ -397,7 +415,6 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background:  rgb(233, 229, 229);
   font-family: "Montserrat", sans-serif;
   font-weight: normal;
   line-height: 1.5;
