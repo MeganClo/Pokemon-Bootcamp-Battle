@@ -50,10 +50,9 @@ See live application [here](http://meganclo.github.io/Pokemon-Bootcamp-Battle)
 ![project image](https://i.imgur.com/fGPIrnD.png) 
 
 
-#### Wireframes and Design Assets 
+## Wireframes and Design Assets 🎨
 ![figmathumbnail](https://i.imgur.com/QlIs6Yd.pnghttps://i.imgur.com/QlIs6Yd.png)
-
-[Figma Assets](https://www.figma.com/file/fZvBe19Q391esqf7GfZAE0/Bootcamp-Project?node-id=0%3A1)
+We used [Figma](https://www.figma.com/file/fZvBe19Q391esqf7GfZAE0/Bootcamp-Project?node-id=0%3A1) to collaboratively design our project.
   
 
 # Acknowledgement & Resources 🤝
