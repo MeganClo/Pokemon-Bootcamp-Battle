@@ -6,6 +6,50 @@
  * Licensed under MIT Open Source
  */
 
+ #userPokemonName {
+  text-transform:uppercase;
+  font-weight: 800;
+
+ }
+
+ #randomPokemonName
+ {
+  text-transform:uppercase;
+  font-weight: 800;
+}
+/* SIZING OF UPDATES AREA */
+ #randomUpdates{
+  min-height: 8rem;
+  min-width:fit-content;
+  font-size: large;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+ #enemyAttack
+ {
+  text-align: center;
+  flex-wrap: wrap;
+  font-size: large;
+  text-align: center;
+ 
+}
+
+
+ #userPokemonUpdates {
+   min-height: 8rem;
+   min-width: fit-content;
+   font-size: large;
+   flex-wrap: wrap; 
+   text-align: center;
+
+ }
+ 
+ #userAttack {
+   text-align: center;
+   flex-wrap: wrap;
+   font-size: large;
+ }
 
 
  
@@ -253,21 +297,22 @@ li:before {
       border-color: #09174e;
     }
 
-  #move1, #move2, #move3, #move4 {
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    margin: .15vw .15vw .15vw .15vw;
-    border-radius: 6px;
-    font-size: 1rem;
-    align-items: center;
-    font-weight: bolder;
-    background-color: #2652FD;
-    border-color: #09174e;
-    text-align: center;
+    #move1, #move2, #move3, #move4 {
+      padding-left: 2vw;
+      padding-right: 2vw;
+      height: 60px !important;
+      margin: .15vw .15vw .15vw .15vw;
+      border-radius: 6px;
+      font-size: .9rem;
+      font-weight: bolder;
+      background-color: #2652FD;
+      border-color: #09174e;
+      align-items: baseline;
+      text-align: center;
+     
 
-  }
+  
+    }  
 
 
     /* CUSTOM STUFF END*/
