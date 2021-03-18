@@ -5,317 +5,333 @@
  * https://get.foundation
  * Licensed under MIT Open Source
  */
+ /* Primarily a Foundation CSS file with our additions specific to the game*/
 
- #userPokemonName {
-  text-transform:uppercase;
-  font-weight: 800;
+ /*battle related formatting*/
 
- }
+#userPokemonName {
+	text-transform: uppercase;
+	font-weight: 800;
 
- #randomPokemonName
- {
-  text-transform:uppercase;
-  font-weight: 800;
-}
-/* SIZING OF UPDATES AREA */
- #randomUpdates{
-  min-height: 8rem;
-  min-width:fit-content;
-  font-size: large;
-  flex-wrap: wrap;
-  text-align: center;
 }
 
- #enemyAttack
- {
-  text-align: center;
-  flex-wrap: wrap;
-  font-size: large;
-  text-align: center;
- 
+#randomPokemonName {
+	text-transform: uppercase;
+	font-weight: 800;
+}
+
+#randomUpdates {
+	min-height: 8rem;
+	min-width: fit-content;
+	font-size: large;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+#enemyAttack {
+	text-align: center;
+	flex-wrap: wrap;
+	font-size: large;
+	text-align: center;
+
 }
 
 
- #userPokemonUpdates {
-   min-height: 8rem;
-   min-width: fit-content;
-   font-size: large;
-   flex-wrap: wrap; 
-   text-align: center;
+#userPokemonUpdates {
+	min-height: 8rem;
+	min-width: fit-content;
+	font-size: large;
+	flex-wrap: wrap;
+	text-align: center;
 
- }
- 
- #userAttack {
-   text-align: center;
-   flex-wrap: wrap;
-   font-size: large;
- }
-
-
- 
-/*currently this impacts button to show modal*/
- .show{
-   width: 150px;
-   height: 40px;
-   padding: 15px 15px 15px 15px;
-   background: #e74c3c;
-   color: #fff;
-   border-radius: 5px;
-   border: 0;
-   border-bottom: 2px solid #c0392b;
-   cursor: pointer;
-   
- }
-
- 
- .close{
-   position: absolute;
-   top: 0;
-   right: 0;
-   width: 35px;
-   height: 30px;
-   background: rgb(65, 3, 236);
-   color: #fff;
-   cursor: pointer;
-   border: 0;
- }
- 
-
- 
- .mask{
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: rgba(52, 73, 94, 0.8);
-   z-index: 50;
-   visibility: hidden;
-   
-   opacity: 0;
-   
-   transition: 0.7s;
- }
- 
-
- 
- .modal{
-   position: fixed;
-   top: 50%;
-   left: 50%;
-   width: 400px;
-   height: 300px;
-   margin-left: -200px;
-   margin-top: -150px;
-   padding: 15px 15px 15px 15px;
-   background: white;
-   z-index: 100;
-   visibility: hidden;
-   
-   opacity: 0;
-   
-   transition: 0.5s ease-out;
-   
-   transform: translateY(45px);
- }
- 
- 
- .active{
-   visibility: visible;
-   opacity: 1;
- }
- 
- 
- .active + .modal{
-   visibility: visible;
-   opacity: 1;
-   transform: translateY(0);
- }
- /*end modal stuff */
-
-@media print, screen and (min-width: 40em) {
-  .reveal, .reveal.tiny, .reveal.small, .reveal.large {
-    right: auto;
-    left: auto;
-    margin: 0 auto; } }
-
-/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
-html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%; 
-  font-family: 'Montserrat', sans-serif;}
-
-  #rowNew {
-    background-color: linear-gradient(180deg, rgba(66, 166, 215, 0.48) 0%, rgba(88, 194, 218, 0.48) 50%, rgba(106, 208, 223, 0.48) 100%) !important;
-  }
-
-  #game{
-    flex-direction: row;
-  }
-
-  #opponentHeader {
-padding-top: 1vh;
-padding-left: 1vw;
-padding-bottom: 1vh;
-font-weight: bolder;
-align-items: center;
 }
 
-#leaderHeader
-{
-  padding-top: 1vh;
-  padding-left: 1vw;
-  padding-bottom: 1vh;
-  font-weight: bolder;
-  align-items: center;
-  }
+#userAttack {
+	text-align: center;
+	flex-wrap: wrap;
+	font-size: large;
+}
 
-#userHeader
-{
-  padding-top: 1vh;
-  padding-left: 1vw;
-  padding-bottom: 1vh;
-  font-weight: bolder;
-  align-items: center;
-  }
+/* battle items layout */
+#rowNew {
+	background-color: linear-gradient(180deg, rgba(66, 166, 215, 0.48) 0%, rgba(88, 194, 218, 0.48) 50%, rgba(106, 208, 223, 0.48) 100%) !important;
+}
+
+#game {
+	flex-direction: row;
+}
+
+
+#opponentHeader {
+	padding-top: 1vh;
+	padding-left: 1vw;
+	padding-bottom: 1vh;
+	font-weight: bolder;
+	align-items: center;
+}
+
+#leaderHeader {
+	padding-top: 1vh;
+	padding-left: 1vw;
+	padding-bottom: 1vh;
+	font-weight: bolder;
+	align-items: center;
+}
+
+#userHeader {
+	padding-top: 1vh;
+	padding-left: 1vw;
+	padding-bottom: 1vh;
+	font-weight: bolder;
+	align-items: center;
+}
 
 #randomPokemonPicture {
-padding-left: 1vw;
-padding-bottom: 1vh;
-align-items: center;
+	padding-left: 1vw;
+	padding-bottom: 1vh;
+	align-items: center;
 }
 
 #userPokemonPicture {
-  padding-left: 1vw;
-padding-bottom: 1vh;
-align-items: center;
+	padding-left: 1vw;
+	padding-bottom: 1vh;
+	align-items: center;
 
 }
 
 ol {
-  list-style: none;
-  counter-reset: item;
+	list-style: none;
+	counter-reset: item;
 }
+
 li {
-  counter-increment: item;
-  margin-bottom: 5px;
+	counter-increment: item;
+	margin-bottom: 5px;
 }
+
 li:before {
-  margin-right: 10px;
-  content: counter(item);
-  background: darkblue;
-  border-radius: 100%;
-  font-weight: bold;
-  color: white;
-  width: 1.7em;
-  text-align: center;
-  display: inline-block;
+	margin-right: 10px;
+	content: counter(item);
+	background: darkblue;
+	border-radius: 100%;
+	font-weight: bold;
+	color: white;
+	width: 1.7em;
+	text-align: center;
+	display: inline-block;
 }
 
 
-  .hero-section {
-    background: url("https://i.imgur.com/sEJsZpb.png") 50% no-repeat;
-    background-size: cover;
-    height: 100vh;
-    text-align: center;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
+/*background images*/
+.hero-section {
+	background: url("https://i.imgur.com/sEJsZpb.png") 50% no-repeat;
+	background-size: cover;
+	height: 100vh;
+	text-align: center;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
 
 .hero-section2 {
-    background: url("https://i.imgur.com/9vvgrbU.png") 50% no-repeat;
-    background-size: cover;
-    height: 100vh;
-    text-align: center;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
+	background: url("https://i.imgur.com/9vvgrbU.png") 50% no-repeat;
+	background-size: cover;
+	height: 100vh;
+	text-align: center;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
 
-  .hero-section3 {
-    background: url("https://i.imgur.com/XRatpwH.png") 50% no-repeat;
-    background-size: cover;
-    height: 100vh;
-    text-align: center;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-
-
-  .hero-section .hero-section-text {
-    color: #fefefe;
-    text-shadow: 1px 1px 2px #0a0a0a;
-  }
-  
-    .input-group-button .button {
-      border-radius:  0 5000px 5000px 0;
-      font-size: 0.8rem;
-    }
-  
-  .circle {
-    border-radius: 50%;
-    height: 7vh;
-    width: 7vh;
-    overflow: hidden;
-    flex-shrink: initial;
-    justify-content: center;
-    align-items: center;
-   }
-   #heroHeadline {
-     max-width: 30vw;
-   }
-
-   #myPokemonPic {
-  max-height: 15vh;
-   }
-  
-   #opponentPokemonPic {
-    max-height: 15vh;
-     }
-
-    #submitUsername {
-      border-color: #09174e;
-    }
-
-    #move1, #move2, #move3, #move4 {
-      padding-left: 2vw;
-      padding-right: 2vw;
-      height: 60px !important;
-      margin: .15vw .15vw .15vw .15vw;
-      border-radius: 6px;
-      font-size: .9rem;
-      font-weight: bolder;
-      background-color: #2652FD;
-      border-color: #09174e;
-      align-items: baseline;
-      text-align: center;
-     
-
-  
-    }  
+.hero-section3 {
+	background: url("https://i.imgur.com/XRatpwH.png") 50% no-repeat;
+	background-size: cover;
+	height: 100vh;
+	text-align: center;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
 
 
+.hero-section .hero-section-text {
+	color: #fefefe;
+	text-shadow: 1px 1px 2px #0a0a0a;
+}
+
+.input-group-button .button {
+	border-radius: 0 5000px 5000px 0;
+	font-size: 0.8rem;
+}
+
+/*format user picture*/
+.circle {
+	border-radius: 50%;
+	height: 7vh;
+	width: 7vh;
+	overflow: hidden;
+	flex-shrink: initial;
+	justify-content: center;
+	align-items: center;
+}
+
+#heroHeadline {
+	max-width: 30vw;
+}
+
+#myPokemonPic {
+	max-height: 15vh;
+}
+
+#opponentPokemonPic {
+	max-height: 15vh;
+}
+/*buttons for entry and game */
+#submitUsername {
+	border-color: #09174e;
+}
+
+#move1,
+#move2,
+#move3,
+#move4 {
+	padding-left: 2vw;
+	padding-right: 2vw;
+	height: 50px !important;
+	margin: .15vw .15vw .15vw .15vw;
+	border-radius: 6px;
+	font-size: .9rem;
+	font-weight: bolder;
+	background-color: #2652FD;
+	border-color: #09174e;
+	align-items: center;
+	text-align: center;
+
+
+
+}
     /* CUSTOM STUFF END*/
+
+
+
+/*currently this impacts button to show modal*/
+.show {
+	width: 150px;
+	height: 40px;
+	padding: 15px 15px 15px 15px;
+	background: #e74c3c;
+	color: #fff;
+	border-radius: 5px;
+	border: 0;
+	border-bottom: 2px solid #c0392b;
+	cursor: pointer;
+
+}
+
+
+.close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 35px;
+	height: 30px;
+	background: rgb(65, 3, 236);
+	color: #fff;
+	cursor: pointer;
+	border: 0;
+}
+
+
+
+.mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(52, 73, 94, 0.8);
+	z-index: 50;
+	visibility: hidden;
+
+	opacity: 0;
+
+	transition: 0.7s;
+}
+
+
+
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 300px;
+	margin-left: -200px;
+	margin-top: -150px;
+	padding: 15px 15px 15px 15px;
+	background: white;
+	z-index: 100;
+	visibility: hidden;
+
+	opacity: 0;
+
+	transition: 0.5s ease-out;
+
+	transform: translateY(45px);
+}
+
+
+.active {
+	visibility: visible;
+	opacity: 1;
+}
+
+
+.active+.modal {
+	visibility: visible;
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/*end modal items */
+
+@media print,
+screen and (min-width: 40em) {
+
+	.reveal,
+	.reveal.tiny,
+	.reveal.small,
+	.reveal.large {
+		right: auto;
+		left: auto;
+		margin: 0 auto;
+	}
+}
+
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	font-family: 'Montserrat', sans-serif;
+}
 
 
 h1 {

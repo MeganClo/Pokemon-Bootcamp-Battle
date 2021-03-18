@@ -2,117 +2,91 @@
 <html class="no-js" lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PokémonBootcamp Battles</title>
-  <link rel="stylesheet" href="assets/css/foundation.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-  </style>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PokémonBootcamp Battles</title>
+	<link rel="stylesheet" href="assets/css/foundation.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+	</style>
 </head>
-
 <body>
-  <div class="hero-section2">
-  <!--HERO-->
-  <!--Page Hero-->
-  <!-- <div class="hero-section">
-    <div class="hero-section-text">
-      <h1><img id="heroHeadline" src="https://i.imgur.com/WigFSVQ.png"></h1>
-      <h1 id="heroSubHeadline">Bootcamp Battles </h1> -->
-      
-      <!-- <div id="userForm">
-        <div class="input-group">
-          <input id="submitUsername" placeholder="Enter your name" class="input-group-field" type="text">
-          <button id="submitUsernamebutton" class="input-group-button button"><strong>GO!</strong></button>
-        </div>
-      </div> -->
-    <!-- </div>
-  </div> -->
-  <!--GAME SECTION-->
-  <div class="grid-container">
-   <h1> Pokemon Bootcamp Battles</h1>
-    <!--USER GAME SECTION-->
-    <!--User side Pokemon information-->
-    <div class="grid-x">
-      <div class="cell small-6">
-        <div class="card">
-          <h5 id="userHeader">YOUR POKÉMON</h5>
+	<div class="hero-section2">
+		<!--GAME SECTION-->
+		<div class="grid-container">
+			<h1> Pokemon Bootcamp Battles</h1>
+			<!--USER SIDE-->
+			<!--User side Pokemon information-->
+			<div class="grid-x">
+				<div class="cell small-6">
+					<div class="card">
+						<h5 id="userHeader">YOUR POKÉMON</h5>
 
-        <!--User Pokemon Picture-->
-          <!-- <div id="userPokemonPicture"><img style="max-width: 15vh;" src="https://i.imgur.com/x7EH4rz.png"></div> -->
-          <div id="userPokemonPicture"></div>
-          <div class="card-section">
-            <!-- User Pokemon Health Bar-->
-            <h6 id="userPokemonName"> <img src="./assets/images/heart.png"></h6>
-            <div id = "userHealthBar" class="success progress" role="progressbar" tabindex="0" aria-valuenow="75" aria-valuemin="0"
-              aria-valuetext="75 percent" aria-valuemax="100">
-              <span id="userHealthStats" class="progress-meter" style="width: 75%">
-                <span class="progress-meter-text"><span id="user-Health"></span> %</span>
-              </span>
-            </div>
-            <!--User Pokemon game updates-->
-            <div id="userPokemonUpdates" class="small-3 medium-4 cell">
-               
-              <h5><span id ="userAttack"></span></h5>
-            </div>
-          <!--User Pokemon move buttons-->
-            <div>
-              <button class="button attackButtons" value="5" id="move1"></button>
-              <button class="button attackButtons" value="10" id="move2"></button>
-              <button class="button attackButtons" value="15" id="move3"></button>
-              <button class="button attackButtons" value="5" id="move4"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    <!--End user Pokemon-->
-    <!--RANDOM USER GAME SECTION-->
-      <div class="cell small-6">
-        <div class="card">
-          <h5 id="opponentHeader">OPPONENT</h5>
-          <div id="randomPokemonPicture">
-          <!-- <img style="max-width: 15vh;" src="https://i.imgur.com/fWeYTpP.png"> -->
-          </div>
-          <div class="card-section">
-            <!-- Opponent Pokemon Health Bar-->
-            <h6 id="randomPokemonName"></h6>
-            <div id="enemyHealthBar" class="alert progress" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0"
-              aria-valuetext="25 percent" aria-valuemax="100">
-              <span id="enemyHealthStats" class="progress-meter" style="width: 25%">
-                <span class="progress-meter-text"><span id="enemy-health"></span>%</span>
-              </span>
-            </div>
-            <!--OpponentPokemon-->
-            <div id="randomUpdates" class="small-3 medium-4 cell">
-       
-              <h5><span id ="enemyAttack"></span></h5>
-            </div>
-
-            <!--Picture placeholder-->
-            <div class="randomPicture" id="randomPicture">
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--MODAL -->
-    <button class="show" aria-haspopup="true">Show Modal</button>
-    <div class="mask" role="dialog"></div>
-    <div class="modal" role="alert">
-      <p id="modalPokemon">test content</p>
-      <button class="close" role="button">X</button>
-    </div>
-    <!--END MODAL -->
-
-    <!--End Main container-->
-  </div>
-  <!--Scripts-->
-  <script src="assets/js/vendor.js"></script>
-  <script src="assets/js/foundation.js"></script>
-  <script src="assets/js/script.js"></script>
-  </div>
+						<!--User Pokemon Picture-->
+						<div id="userPokemonPicture"></div>
+						<div class="card-section">
+							<!-- User Pokemon Health Bar-->
+							<h6 id="userPokemonName"> <img src="./assets/images/heart.png"></h6>
+							<div id="userHealthBar" class="success progress" role="progressbar" tabindex="0" aria-valuenow="75" aria-valuemin="0" aria-valuetext="75 percent" aria-valuemax="100">
+								<span id="userHealthStats" class="progress-meter" style="width: 75%">
+									<span class="progress-meter-text"><span id="user-Health"></span> %</span>
+								</span>
+							</div>
+							<!--User Pokemon game updates-->
+							<div id="userPokemonUpdates" class="small-3 medium-4 cell">
+								<h5><span id="userAttack"></span></h5>
+							</div>
+							<!--User Pokemon move buttons-->
+							<div>
+								<button class="button attackButtons" value="5" id="move1"></button>
+								<button class="button attackButtons" value="10" id="move2"></button>
+								<button class="button attackButtons" value="15" id="move3"></button>
+								<button class="button attackButtons" value="5" id="move4"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--End user Pokemon-->
+				<!--RANDOM USER SECTION-->
+				<div class="cell small-6">
+					<div class="card">
+						<h5 id="opponentHeader">OPPONENT</h5>
+						<div id="randomPokemonPicture">
+						</div>
+						<div class="card-section">
+							<!-- Opponent Pokemon Health Bar-->
+							<h6 id="randomPokemonName"></h6>
+							<div id="enemyHealthBar" class="alert progress" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+								<span id="enemyHealthStats" class="progress-meter" style="width: 25%">
+									<span class="progress-meter-text"><span id="enemy-health"></span>%</span>
+								</span>
+							</div>
+							<!--OpponentPokemon-->
+							<div id="randomUpdates" class="small-3 medium-4 cell">
+								<h5><span id="enemyAttack"></span></h5>
+							</div>
+							<!--Picture placeholder-->
+							<div class="randomPicture" id="randomPicture"> <img width="8%"src="./assets/images/location-pin.svg">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--MODAL -->
+			<button class="show" aria-haspopup="true">Show Modal</button>
+			<div class="mask" role="dialog"></div>
+			<div class="modal" role="alert">
+				<p id="modalPokemon">test content</p>
+				<button class="close" role="button">X</button>
+			</div>
+			<!--END MODAL -->
+			<!--End Main container-->
+		</div>
+		<!--Scripts-->
+		<script src="assets/js/vendor.js"></script>
+		<script src="assets/js/foundation.js"></script>
+		<script src="assets/js/script.js"></script>
+	</div>
 </body>
-
 </html>
