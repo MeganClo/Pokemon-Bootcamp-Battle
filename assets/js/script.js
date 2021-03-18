@@ -34,10 +34,6 @@ var attack4 = document.getElementById("move4");
 // targeting all the buttons
 var attackButtons = document.getElementsByClassName("attackButtons");
 
-// targeting the modal to change text
-var winOrLose = document.getElementById("win-or-lose");
-var gameEndText = document.getElementById("words");
-
 // targeting opponent random user information placeholders
 var randomUser = document.querySelector("#randomPicture");
 var randomUpdates = document.querySelector("#randomUpdates");
@@ -46,8 +42,8 @@ var randomUpdates = document.querySelector("#randomUpdates");
 var enemyAttackText = document.getElementById("enemyAttack");
 var userAttackText = document.getElementById("userAttack");
 
-// Get the modal
-var modal = document.getElementById("myModal");
+// var emenyHealthText = document.getElementById("enemyHealth");
+// var userHealthText = document.getElementById("userHealth");
 
 // adding moves to the page
 var moveOne = document.querySelector("#move1")
@@ -87,15 +83,9 @@ var updateHealth = function() {
     userHealthEl.textContent = userHealth;
     // checking for the end of the game
     if (userHealth <= 0) {
-        modalOpen();
-        winOrLose.textContent = (`Oh no, ${userName}! You've lost the Battle!`);
-        gameEndText.textContent = ("Get 'em next time!");
+        alert("YOU LOST!")
     } else if (enemyHealth <= 0) {
-        modalOpen();
-        winOrLose.textContent = (`Congratulations, ${userName}! You won the battle!`);
-        gameEndText.textContent = (`Your score is ${userHealth}! Check high scores to see if you made it in the top!`);
-        gameEnd();
-        // alert("YOU WON! Your score is" + userHealth + "!");
+        alert("YOU WON! Your score is" + userHealth + "!");
     } else {
         // setting class to change color of user's health bar
         if (userHealth > 50) {
@@ -128,7 +118,7 @@ var fightButtonClicks = function() {
         for (var i = 0; i < attackButtons.length; i++) {
             attackButtons[i].disabled = false;
         };
-    }, 2000);
+    }, 3000);
 };
 
 
@@ -356,7 +346,6 @@ let opponentInfo = () => {
 
 
 var gameEnd = function() {
-    var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
     var score = { 
         score: userHealth,
         name: userName
@@ -369,9 +358,28 @@ var gameEnd = function() {
     localStorage.setItem("highscores", JSON.stringify(highscores));
 };
 
-var modalOpen = function() {
-  modal.style.display = "block";
-};
+// Click function for show the Modal
+$(".show").on("click", function(){
+    $(".mask").addClass("active");
+  });
+  
+  // Function for close the Modal
+  
+  function closeModal(){
+    $(".mask").removeClass("active");
+  }
+  
+  // Call the closeModal function on the clicks/keyboard
+  
+  $(".close, .mask").on("click", function(){
+    closeModal();
+  });
+  
+  $(document).keyup(function(e) {
+    if (e.keyCode == 27) {
+      closeModal();
+    }
+  });
 
 
 getCurrentInfo();
