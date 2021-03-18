@@ -343,12 +343,12 @@ let opponentInfo = () => {
             // console.log(userPokemonImage)
             opponentPokemonPlaceholder.appendChild(opponentPokemonImage)
 
-            //displaying radom moves
-            var opponentMove = document.createElement("p")
-            opponentMove.textContent = data.moves[0].move.name
-            console.log(opponentMove)
+            //displaying random moves
+            // var opponentMove = document.createElement("p")
+            // opponentMove.textContent = data.moves[0].move.name
+            // console.log(opponentMove)
 
-            randomUpdates.appendChild(opponentMove)
+            // randomUpdates.appendChild(opponentMove)
         })
     })
 };
