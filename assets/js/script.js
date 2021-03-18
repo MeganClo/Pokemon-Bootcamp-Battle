@@ -34,6 +34,10 @@ var attack4 = document.getElementById("move4");
 // targeting all the buttons
 var attackButtons = document.getElementsByClassName("attackButtons");
 
+// targeting the modal to change text
+var winOrLose = document.getElementById("win-or-lose");
+var gameEndText = document.getElementById("words");
+
 // targeting opponent random user information placeholders
 var randomUser = document.querySelector("#randomPicture");
 var randomUpdates = document.querySelector("#randomUpdates");
@@ -42,8 +46,8 @@ var randomUpdates = document.querySelector("#randomUpdates");
 var enemyAttackText = document.getElementById("enemyAttack");
 var userAttackText = document.getElementById("userAttack");
 
-// var emenyHealthText = document.getElementById("enemyHealth");
-// var userHealthText = document.getElementById("userHealth");
+// Get the modal
+var modal = document.getElementById("myModal");
 
 // adding moves to the page
 var moveOne = document.querySelector("#move1")
@@ -70,7 +74,7 @@ while (pokemon == opponentRandomPokemon) {
 };
 
 // updated health text
-var updateHealth = function () {
+var updateHealth = function() {
     // enemy health
     enemyHealthBar.setAttribute("aria-valuenow", enemyHealth);
     enemyHealthBar.setAttribute("aria-valuetext", enemyHealth);
@@ -83,9 +87,15 @@ var updateHealth = function () {
     userHealthEl.textContent = userHealth;
     // checking for the end of the game
     if (userHealth <= 0) {
-        alert("YOU LOST!")
+        modalOpen();
+        winOrLose.textContent = (`Oh no, ${userName}! You've lost the Battle!`);
+        gameEndText.textContent = ("Get 'em next time!");
     } else if (enemyHealth <= 0) {
-        alert("YOU WON! Your score is" + userHealth + "!");
+        modalOpen();
+        winOrLose.textContent = (`Congratulations, ${userName}! You won the battle!`);
+        gameEndText.textContent = (`Your score is ${userHealth}! Check high scores to see if you made it in the top!`);
+        gameEnd();
+        // alert("YOU WON! Your score is" + userHealth + "!");
     } else {
         // setting class to change color of user's health bar
         if (userHealth > 50) {
@@ -103,35 +113,35 @@ var updateHealth = function () {
 };
 
 // user fight function to be called on button clicks
-var userFight = function (attackVal) {
+var userFight = function(attackVal) {
     console.log("fighting!");
-    enemyHealth = enemyHealth - attackVal;
+    enemyHealth = enemyHealth-attackVal;
 };
 
 // time interval used to wait until enemy attack to attack again
-var fightButtonClicks = function () {
+var fightButtonClicks = function() {
     for (var i = 0; i < attackButtons.length; i++) {
         attackButtons[i].disabled = true;
     };
-    setTimeout(function () {
+    setTimeout(function() {
         enemyFight();
         for (var i = 0; i < attackButtons.length; i++) {
             attackButtons[i].disabled = false;
         };
-    }, 3000);
+    }, 2000);
 };
 
 
 // enemy fight function 
-var enemyFight = function () {
+var enemyFight = function() {
     if (userHealth > 0 && enemyHealth > 0) {
         var num = Math.floor(Math.random() * 10) + 1;
         if (enemyAttackValue === 5) {
             if (num < 3) {
                 enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
-                userAttackText.textContent = (`${userRandomPokemon} blocked attack from ${opponentRandomPokemon}!`);
+                userAttackText.textContent = (`${userRandomPokemon} blocked attack from ${opponentRandomPokemon}!`); 
             } else {
-                userHealth = userHealth - enemyAttackValue;
+                userHealth = userHealth-enemyAttackValue;
                 enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} got hit from ${opponentRandomPokemon}!`);
                 updateHealth();
@@ -141,7 +151,7 @@ var enemyFight = function () {
                 enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} blocked attack from ${opponentRandomPokemon}!`);
             } else {
-                userHealth = userHealth - enemyAttackValue;
+                userHealth = userHealth-enemyAttackValue;
                 enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} got hit from ${opponentRandomPokemon}!`);
                 updateHealth();
@@ -151,7 +161,7 @@ var enemyFight = function () {
                 enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} blocked attack from ${opponentRandomPokemon}!`);
             } else {
-                userHealth = userHealth - enemyAttackValue;
+                userHealth = userHealth-enemyAttackValue;
                 enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} got hit from ${opponentRandomPokemon}!`);
                 updateHealth();
@@ -161,7 +171,7 @@ var enemyFight = function () {
 };
 
 // button attack 1 (value 5)
-attack1.addEventListener("click", function () {
+attack1.addEventListener("click", function() {
     console.log("fight button 1");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
@@ -179,7 +189,7 @@ attack1.addEventListener("click", function () {
 });
 
 // button attack 2 (value 10)
-attack2.addEventListener("click", function () {
+attack2.addEventListener("click", function() {
     console.log("fight button 2");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
@@ -197,7 +207,7 @@ attack2.addEventListener("click", function () {
 });
 
 // button attack 3 (value 15)
-attack3.addEventListener("click", function () {
+attack3.addEventListener("click", function() {
     console.log("fight button 3");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
@@ -215,7 +225,7 @@ attack3.addEventListener("click", function () {
 });
 
 // button attack 4 (value 5)
-attack4.addEventListener("click", function () {
+attack4.addEventListener("click", function() {
     console.log("fight button 4");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
@@ -253,7 +263,7 @@ let displayRepos = (repos) => {
         // loop over user name
         let nameObject = repos[i].name
 
-
+        
         const name = Object.values(nameObject)
         // create an elememt to hold random user name
         let randomUserName = document.createElement("div");
@@ -262,34 +272,31 @@ let displayRepos = (repos) => {
         // loop over user country
         let countryObject = repos[i].location
         const country = Object.values(countryObject)
-        // let randomUserCountry = country[3]
-        // console.log("I am from " + randomUserCountry)
         let randomUserCountry = document.createElement("div");
         randomUserCountry.textContent = country[3]
         randomUser.appendChild(randomUserCountry)
         //loop over pictures
         let pictureObject = repos[i].picture
-        // console.log(pictureObject)
-
         const picture = Object.values(pictureObject)
         let randomUserImg = document.createElement('img');
         randomUserImg.setAttribute("class", "circle")
         randomUserImg.setAttribute('src', picture[0]);
 
-        // let randomUserPicture = picture[2]
-        // console.log(randomUserPicture)
-
         randomUser.appendChild(randomUserImg)
     }
 };
-
+console.log("one")
 // getting and displaying user's random pokemon and moves
 let getCurrentInfo = () => {
     let apiURL = "https://pokeapi.co/api/v2/pokemon/" + userRandomPokemon;
     fetch(apiURL).then((response) => {
         response.json().then((data) => {
             //displaying random user pokemon name
+
+            // making the first letter Upper case
+            userRandomPokemon = userRandomPokemon.charAt(0).toUpperCase() + userRandomPokemon.slice(1)
             userPokemon.textContent = userRandomPokemon
+
             //displaying random user pokemon picture
             var userPokemonImage = document.createElement("img")
             var imageURL = "./assets/images/" + userRandomPokemon + ".png"
@@ -312,13 +319,6 @@ let getCurrentInfo = () => {
             movesObject4.textContent = data.moves[3].move.name
             moveFour.appendChild(movesObject4)
 
-            console.log(userRandomPokemon)
-
-            // function jsUcfirst(string) {
-            //     return string.charAt(0).toUpperCase() + string.slice(1);
-            // }
-            // jsUcfirst(userRandomPokemon)
-            // console.log(userRandomPokemon)
         })
     })
 };
@@ -331,8 +331,9 @@ let opponentInfo = () => {
             console.log(data)
 
             // displaying opponent random pokemon's name
+            opponentRandomPokemon = opponentRandomPokemon.charAt(0).toUpperCase() + opponentRandomPokemon.slice(1)
             opponentPokemon.textContent = opponentRandomPokemon
-            // console.log(opponentPokemon)
+            console.log(opponentPokemon)
 
             //displaying oponent's random pokemon picture
             var opponentPokemonImage = document.createElement("img")
@@ -353,41 +354,23 @@ let opponentInfo = () => {
 };
 
 
-var gameEnd = function () {
-    var score = {
+var gameEnd = function() {
+    var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+    var score = { 
         score: userHealth,
         name: userName
     };
     highscores.push(score);
-    highscores.sort((a, b) => {
+    highscores.sort((a,b) => {
         return b.score - a.score;
     });
     highscores.splice(3);
     localStorage.setItem("highscores", JSON.stringify(highscores));
 };
 
-// Click function for show the Modal
-// $(".show").on("click", function(){
-//     $(".mask").addClass("active");
-//   });
-
-// Function for close the Modal
-
-function closeModal() {
-    $(".mask").removeClass("active");
-}
-
-// Call the closeModal function on the clicks/keyboard
-
-$(".close, .mask").on("click", function () {
-    closeModal();
-});
-
-$(document).keyup(function (e) {
-    if (e.keyCode == 27) {
-        closeModal();
-    }
-});
+var modalOpen = function() {
+  modal.style.display = "block";
+};
 
 
 getCurrentInfo();
