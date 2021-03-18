@@ -163,12 +163,13 @@ li:before {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+  flex-wrap: wrap;
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
 	-webkit-justify-content: center;
 	-ms-flex-pack: center;
-	justify-content: center;
+	justify-content:flex-start;
 }
 
 
@@ -196,6 +197,10 @@ li:before {
 #heroHeadline {
 	max-width: 30vw;
 }
+#heroHeadline2 {
+	max-width: 20vw;
+  max-height: 10vh;
+}
 
 #myPokemonPic {
 	max-height: 15vh;
@@ -213,19 +218,21 @@ li:before {
 #move2,
 #move3,
 #move4 {
-	padding-left: 2vw;
-	padding-right: 2vw;
+	padding-left: 1vw;
+	padding-right: 1vw;
+  min-width: 10vw;
 	height: 50px !important;
-	margin: .15vw .15vw .15vw .15vw;
+	margin: .10vw .10vw .10vw .10vw;
 	border-radius: 6px;
-	font-size: .9rem;
+	font-size: .8rem;
 	font-weight: bolder;
 	background-color: #2652FD;
 	border-color: #09174e;
 	align-items: center;
+  flex-wrap: nowrap;
 	text-align: center;
 }
-    /* CUSTOM STUFF END*/
+
 
 
 /* The Modal (background) */
@@ -251,9 +258,9 @@ li:before {
   border: 1px solid #888;
   width: 80%;
 }
-
-
 /*end modal items */
+
+/* CUSTOM STUFF END*/
 
 @media print,
 screen and (min-width: 40em) {
