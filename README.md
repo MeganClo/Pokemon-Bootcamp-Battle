@@ -13,7 +13,7 @@ A simple gaming application leveraging the PokéAPI and the Random User Generato
 
 - A random opponent is assigned from the Random User API
 - A random Pokémon is assigned to the user and the opponent
-- Moves are pulled in to the user's buttons from the Poke API
+- Moves are pulled in to the user's buttons from the PokéAPI
 - The user can select moves in a back and forth exchange with their opponent until one runs out of Health
 - Remaining health is the surviving players high score
 - The winner's high score is saved in a leaderboard
