@@ -359,9 +359,9 @@ var gameEnd = function() {
 };
 
 // Click function for show the Modal
-$(".show").on("click", function(){
-    $(".mask").addClass("active");
-  });
+// $(".show").on("click", function(){
+//     $(".mask").addClass("active");
+//   });
   
   // Function for close the Modal
   
