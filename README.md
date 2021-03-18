@@ -58,14 +58,14 @@ We used [Figma](https://www.figma.com/file/fZvBe19Q391esqf7GfZAE0/Bootcamp-Proje
 ## Acknowledgement & Resources 🤝
 
 ### Documentation
-[Foundation](https://get.foundation/frameworks-docs.html)
-[Random User API](https://rapidapi.com/Alejandro99aru/api/random-user)
-[Pokémon API](https://pokeapi.co/docs/v2)
+[Foundation](https://get.foundation/frameworks-docs.html)        
+[Random User API](https://rapidapi.com/Alejandro99aru/api/random-user)        
+[Pokémon API](https://pokeapi.co/docs/v2)        
 
 ### Coding Examples
-[CodePen 'Simple Modals'](https://codepen.io/reidark/pen/FEueH)
-[Stack Overflow 'Image Formatting as Circles'](https://stackoverflow.com/questions/37920332/force-image-tag-to-be-perfect-circle)
+[CodePen 'Simple Modals'](https://codepen.io/reidark/pen/FEueH)        
+[Stack Overflow 'Image Formatting as Circles'](https://stackoverflow.com/questions/37920332/force-image-tag-to-be-perfect-circle)        
 
 ### Design
-[Figma Application & Community Resources](https://www.figma.com/)
-[Pokémon Images from stickpng.com](https://www.stickpng.com/img/games/pokemon/pikachu-pokemon)      
+[Figma Application & Community Resources](https://www.figma.com/)        
+[Pokémon Images from stickpng.com](https://www.stickpng.com/img/games/pokemon/pikachu-pokemon)              
