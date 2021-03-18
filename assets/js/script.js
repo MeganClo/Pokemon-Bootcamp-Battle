@@ -272,31 +272,34 @@ let displayRepos = (repos) => {
         // loop over user country
         let countryObject = repos[i].location
         const country = Object.values(countryObject)
+        // let randomUserCountry = country[3]
+        // console.log("I am from " + randomUserCountry)
         let randomUserCountry = document.createElement("div");
         randomUserCountry.textContent = country[3]
         randomUser.appendChild(randomUserCountry)
         //loop over pictures
         let pictureObject = repos[i].picture
+        // console.log(pictureObject)
+
         const picture = Object.values(pictureObject)
         let randomUserImg = document.createElement('img');
         randomUserImg.setAttribute("class", "circle")
         randomUserImg.setAttribute('src', picture[0]);
 
+        // let randomUserPicture = picture[2]
+        // console.log(randomUserPicture)
+
         randomUser.appendChild(randomUserImg)
     }
 };
-console.log("one")
+
 // getting and displaying user's random pokemon and moves
 let getCurrentInfo = () => {
     let apiURL = "https://pokeapi.co/api/v2/pokemon/" + userRandomPokemon;
     fetch(apiURL).then((response) => {
         response.json().then((data) => {
             //displaying random user pokemon name
-
-            // making the first letter Upper case
-            userRandomPokemon = userRandomPokemon.charAt(0).toUpperCase() + userRandomPokemon.slice(1)
             userPokemon.textContent = userRandomPokemon
-
             //displaying random user pokemon picture
             var userPokemonImage = document.createElement("img")
             var imageURL = "./assets/images/" + userRandomPokemon + ".png"
@@ -318,7 +321,6 @@ let getCurrentInfo = () => {
             let movesObject4 = document.createElement("p")
             movesObject4.textContent = data.moves[3].move.name
             moveFour.appendChild(movesObject4)
-
         })
     })
 };
@@ -331,9 +333,8 @@ let opponentInfo = () => {
             console.log(data)
 
             // displaying opponent random pokemon's name
-            opponentRandomPokemon = opponentRandomPokemon.charAt(0).toUpperCase() + opponentRandomPokemon.slice(1)
             opponentPokemon.textContent = opponentRandomPokemon
-            console.log(opponentPokemon)
+            // console.log(opponentPokemon)
 
             //displaying oponent's random pokemon picture
             var opponentPokemonImage = document.createElement("img")
