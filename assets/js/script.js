@@ -70,7 +70,7 @@ while (pokemon == opponentRandomPokemon) {
 };
 
 // updated health text
-var updateHealth = function() {
+var updateHealth = function () {
     // enemy health
     enemyHealthBar.setAttribute("aria-valuenow", enemyHealth);
     enemyHealthBar.setAttribute("aria-valuetext", enemyHealth);
@@ -103,17 +103,17 @@ var updateHealth = function() {
 };
 
 // user fight function to be called on button clicks
-var userFight = function(attackVal) {
+var userFight = function (attackVal) {
     console.log("fighting!");
-    enemyHealth = enemyHealth-attackVal;
+    enemyHealth = enemyHealth - attackVal;
 };
 
 // time interval used to wait until enemy attack to attack again
-var fightButtonClicks = function() {
+var fightButtonClicks = function () {
     for (var i = 0; i < attackButtons.length; i++) {
         attackButtons[i].disabled = true;
     };
-    setTimeout(function() {
+    setTimeout(function () {
         enemyFight();
         for (var i = 0; i < attackButtons.length; i++) {
             attackButtons[i].disabled = false;
@@ -123,15 +123,15 @@ var fightButtonClicks = function() {
 
 
 // enemy fight function 
-var enemyFight = function() {
+var enemyFight = function () {
     if (userHealth > 0 && enemyHealth > 0) {
         var num = Math.floor(Math.random() * 10) + 1;
         if (enemyAttackValue === 5) {
             if (num < 3) {
                 enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
-                userAttackText.textContent = (`${userRandomPokemon} blocked attack from ${opponentRandomPokemon}!`); 
+                userAttackText.textContent = (`${userRandomPokemon} blocked attack from ${opponentRandomPokemon}!`);
             } else {
-                userHealth = userHealth-enemyAttackValue;
+                userHealth = userHealth - enemyAttackValue;
                 enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} got hit from ${opponentRandomPokemon}!`);
                 updateHealth();
@@ -141,7 +141,7 @@ var enemyFight = function() {
                 enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} blocked attack from ${opponentRandomPokemon}!`);
             } else {
-                userHealth = userHealth-enemyAttackValue;
+                userHealth = userHealth - enemyAttackValue;
                 enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} got hit from ${opponentRandomPokemon}!`);
                 updateHealth();
@@ -151,7 +151,7 @@ var enemyFight = function() {
                 enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} blocked attack from ${opponentRandomPokemon}!`);
             } else {
-                userHealth = userHealth-enemyAttackValue;
+                userHealth = userHealth - enemyAttackValue;
                 enemyAttackText.textContent = (`Incoming! ${opponentRandomPokemon} attacked ${userRandomPokemon}!`);
                 userAttackText.textContent = (`${userRandomPokemon} got hit from ${opponentRandomPokemon}!`);
                 updateHealth();
@@ -161,7 +161,7 @@ var enemyFight = function() {
 };
 
 // button attack 1 (value 5)
-attack1.addEventListener("click", function() {
+attack1.addEventListener("click", function () {
     console.log("fight button 1");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
@@ -179,7 +179,7 @@ attack1.addEventListener("click", function() {
 });
 
 // button attack 2 (value 10)
-attack2.addEventListener("click", function() {
+attack2.addEventListener("click", function () {
     console.log("fight button 2");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
@@ -197,7 +197,7 @@ attack2.addEventListener("click", function() {
 });
 
 // button attack 3 (value 15)
-attack3.addEventListener("click", function() {
+attack3.addEventListener("click", function () {
     console.log("fight button 3");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
@@ -215,7 +215,7 @@ attack3.addEventListener("click", function() {
 });
 
 // button attack 4 (value 5)
-attack4.addEventListener("click", function() {
+attack4.addEventListener("click", function () {
     console.log("fight button 4");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
@@ -253,7 +253,7 @@ let displayRepos = (repos) => {
         // loop over user name
         let nameObject = repos[i].name
 
-        
+
         const name = Object.values(nameObject)
         // create an elememt to hold random user name
         let randomUserName = document.createElement("div");
@@ -311,6 +311,14 @@ let getCurrentInfo = () => {
             let movesObject4 = document.createElement("p")
             movesObject4.textContent = data.moves[3].move.name
             moveFour.appendChild(movesObject4)
+
+            console.log(userRandomPokemon)
+
+            // function jsUcfirst(string) {
+            //     return string.charAt(0).toUpperCase() + string.slice(1);
+            // }
+            // jsUcfirst(userRandomPokemon)
+            // console.log(userRandomPokemon)
         })
     })
 };
@@ -345,13 +353,13 @@ let opponentInfo = () => {
 };
 
 
-var gameEnd = function() {
-    var score = { 
+var gameEnd = function () {
+    var score = {
         score: userHealth,
         name: userName
     };
     highscores.push(score);
-    highscores.sort((a,b) => {
+    highscores.sort((a, b) => {
         return b.score - a.score;
     });
     highscores.splice(3);
@@ -362,24 +370,24 @@ var gameEnd = function() {
 // $(".show").on("click", function(){
 //     $(".mask").addClass("active");
 //   });
-  
-  // Function for close the Modal
-  
-  function closeModal(){
+
+// Function for close the Modal
+
+function closeModal() {
     $(".mask").removeClass("active");
-  }
-  
-  // Call the closeModal function on the clicks/keyboard
-  
-  $(".close, .mask").on("click", function(){
+}
+
+// Call the closeModal function on the clicks/keyboard
+
+$(".close, .mask").on("click", function () {
     closeModal();
-  });
-  
-  $(document).keyup(function(e) {
+});
+
+$(document).keyup(function (e) {
     if (e.keyCode == 27) {
-      closeModal();
+        closeModal();
     }
-  });
+});
 
 
 getCurrentInfo();
