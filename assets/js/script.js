@@ -348,11 +348,11 @@ let opponentInfo = () => {
             opponentPokemonPlaceholder.appendChild(opponentPokemonImage)
 
             //displaying random moves
-            // var opponentMove = document.createElement("p")
-            // opponentMove.textContent = data.moves[0].move.name
-            // console.log(opponentMove)
+            var opponentMove = document.createElement("p")
+            opponentMove.textContent = data.moves[Math.floor(Math.random() * 10)].move.name
+            console.log(opponentMove)
 
-            // randomUpdates.appendChild(opponentMove)
+            randomUpdates.appendChild(opponentMove)
         })
     })
 };
