@@ -248,6 +248,15 @@ li:before {
   vertical-align: center;
 }
 
+#submitUsernamebutton {
+  font-weight: bolder;
+  padding-left: 1vw;
+	background-color: #2652FD;
+	border-color: #09174e;
+  border-radius: 1px;
+  border: 2px;
+}
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
