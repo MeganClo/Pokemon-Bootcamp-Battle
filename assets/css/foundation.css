@@ -111,8 +111,10 @@ li {
 
 li:before {
 	margin-right: 10px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 	content: counter(item);
-	background: darkblue;
+	background: rgb(22, 22, 219);
 	border-radius: 100%;
 	font-weight: bold;
 	color: white;
@@ -214,6 +216,9 @@ li:before {
 	border-color: #09174e;
 }
 
+
+
+
 .button-group{
   width: 100%;
 }
@@ -241,7 +246,6 @@ li:before {
   vertical-align: center;
 }
 
-
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -263,11 +267,36 @@ li:before {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
+  border-radius: 6px;
   width: 80%;
 }
-/*end modal items */
 
-/* CUSTOM STUFF END*/
+.modal-content .button {
+    min-height: 50px;
+    margin-left: .1vh;
+    margin-right: .1vh;
+    border-radius: 6px;
+    font-weight: bolder;
+    background-color: #2652FD;
+    border-color: #09174e;
+    align-items: center;
+    
+}
+
+
+
+.callout .button {
+  min-height: 50px;
+    margin-left: .1vh;
+    margin-right: .1vh;
+    border-radius: 6px;
+    font-weight: bolder;
+    background-color: #2652FD;
+    border-color: #09174e;
+    align-items: center;
+
+
+}
 
 @media print,
 screen and (min-width: 40em) {
