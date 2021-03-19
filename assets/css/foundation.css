@@ -223,6 +223,7 @@ li:before {
   min-width: 10vw;
 	height: 50px !important;
 	margin: .10vw .10vw .10vw .10vw;
+  margin-bottom: .2vh;
 	border-radius: 6px;
 	font-size: .8rem;
 	font-weight: bolder;
