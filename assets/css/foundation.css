@@ -214,15 +214,27 @@ li:before {
 	border-color: #09174e;
 }
 
+.button-group {
+  align-self: center;
+  width: 100%;
+  display: inline-block;
+
+  
+}
+
 #move1,
 #move2,
 #move3,
 #move4 {
 	padding-left: 1vw;
 	padding-right: 1vw;
-  min-width: 10vw;
+  width: 100%;
+  flex-grow: inherit;
 	height: 50px !important;
-	margin: .10vw .10vw .10vw .10vw;
+	margin-top: .2vh;
+  margin-bottom: .2vh;
+  margin-left: .1vh;
+  margin-right: .1vh;
 	border-radius: 6px;
 	font-size: .8rem;
 	font-weight: bolder;
