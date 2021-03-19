@@ -6,7 +6,7 @@ console.log(userName);
 var enemyHealth = 100;
 var userHealth = 100;
 
-// setting attack value
+// setting a variable to hold attack value
 var userAttack = "";
 var enemyAttack = "";
 
@@ -60,6 +60,9 @@ var userPokemon = document.querySelector("#userPokemonName")
 var userPokemonPlaceholder = document.querySelector("#userPokemonPicture")
 var opponentPokemon = document.querySelector("#randomPokemonName")
 var opponentPokemonPlaceholder = document.querySelector("#randomPokemonPicture")
+
+// setting text to show at beginning of game
+userAttackText.textContent = (`It's your move, ${userName}! Pick an attack to start the game!`)
 
 // creating a random user pokemon
 var pokemon = ["pikachu", "charmander", "bulbasaur", "eevee", "oddish", "squirtle", "bellsprout", "butterfree", "pidgeotto", "jigglypuff"]
@@ -344,12 +347,12 @@ let opponentInfo = () => {
             // console.log(userPokemonImage)
             opponentPokemonPlaceholder.appendChild(opponentPokemonImage)
 
-            //displaying radom moves
-            var opponentMove = document.createElement("p")
-            opponentMove.textContent = data.moves[0].move.name
-            console.log(opponentMove)
+            //displaying random moves
+            // var opponentMove = document.createElement("p")
+            // opponentMove.textContent = data.moves[0].move.name
+            // console.log(opponentMove)
 
-            randomUpdates.appendChild(opponentMove)
+            // randomUpdates.appendChild(opponentMove)
         })
     })
 };

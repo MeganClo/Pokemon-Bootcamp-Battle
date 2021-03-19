@@ -70,6 +70,7 @@
 	align-items: center;
 }
 
+
 #leaderHeader {
 	padding-top: 1vh;
 	padding-left: 1vw;
@@ -101,6 +102,7 @@
 
 ol {
 	list-style: none;
+  text-align: left;
 	counter-reset: item;
 }
 
@@ -111,8 +113,10 @@ li {
 
 li:before {
 	margin-right: 10px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 	content: counter(item);
-	background: darkblue;
+	background: rgb(32, 32, 255);
 	border-radius: 100%;
 	font-weight: bold;
 	color: white;
@@ -214,15 +218,25 @@ li:before {
 	border-color: #09174e;
 }
 
+
+
+
+.button-group{
+  width: 100%;
+}
 #move1,
 #move2,
 #move3,
 #move4 {
-	padding-left: 1vw;
-	padding-right: 1vw;
-  min-width: 10vw;
-	height: 50px !important;
-	margin: .10vw .10vw .10vw .10vw;
+
+  width: 40%;
+  min-height: 50px;
+  flex-grow: inherit;
+  padding-top: 5%;
+	margin-top: .2vh;
+  margin-bottom: .2vh;
+  margin-left: .1vh;
+  margin-right: .1vh;
 	border-radius: 6px;
 	font-size: .8rem;
 	font-weight: bolder;
@@ -231,9 +245,16 @@ li:before {
 	align-items: center;
   flex-wrap: nowrap;
 	text-align: center;
-  
+  vertical-align: center;
+}
 
-
+#submitUsernamebutton {
+  font-weight: bolder;
+  padding-left: 1vw;
+	background-color: #2652FD;
+	border-color: #09174e;
+  border-radius: 1px;
+  border: 2px;
 }
 
 /* The Modal (background) */
@@ -257,11 +278,36 @@ li:before {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
+  border-radius: 6px;
   width: 80%;
 }
-/*end modal items */
 
-/* CUSTOM STUFF END*/
+.modal-content .button {
+    min-height: 50px;
+    margin-left: .1vh;
+    margin-right: .1vh;
+    border-radius: 6px;
+    font-weight: bolder;
+    background-color: #2652FD;
+    border-color: #09174e;
+    align-items: center;
+    
+}
+
+
+
+.callout .button {
+  min-height: 50px;
+    margin-left: .1vh;
+    margin-right: .1vh;
+    border-radius: 6px;
+    font-weight: bolder;
+    background-color: #2652FD;
+    border-color: #09174e;
+    align-items: center;
+
+
+}
 
 @media print,
 screen and (min-width: 40em) {
@@ -3459,7 +3505,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   margin: 1rem 1rem 1rem 1rem;
   padding: 1rem 1rem 1rem 1rem;
   border: 1px solid rgba(10, 10, 10, 0.25);
-  border-radius: 5;
+  border-radius: 6px;
   background-color: white;
   color: #0a0a0a; }
   .callout > :first-child {
