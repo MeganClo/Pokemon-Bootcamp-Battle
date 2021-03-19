@@ -46,6 +46,9 @@ var randomUpdates = document.querySelector("#randomUpdates");
 var enemyAttackText = document.getElementById("enemyAttack");
 var userAttackText = document.getElementById("userAttack");
 
+// setting a variable to hold the enemy attack name
+var enemyAttackName = "";
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -301,6 +304,7 @@ let getCurrentInfo = () => {
     let apiURL = "https://pokeapi.co/api/v2/pokemon/" + userRandomPokemon;
     fetch(apiURL).then((response) => {
         response.json().then((data) => {
+            console.log(data);
             //displaying random user pokemon name
             userPokemon.textContent = userRandomPokemon
             //displaying random user pokemon picture
@@ -311,21 +315,23 @@ let getCurrentInfo = () => {
             console.log(userPokemonImage)
             // console.log(userPokemonImage)
             userPokemonPlaceholder.appendChild(userPokemonImage)
-
-            let movesObject1 = document.createElement("p")
-            movesObject1.textContent = data.moves[0].move.name
-            moveOne.appendChild(movesObject1)
-            let movesObject2 = document.createElement("p")
-            movesObject2.textContent = data.moves[1].move.name
-            moveTwo.appendChild(movesObject2)
-            let movesObject3 = document.createElement("p")
-            movesObject3.textContent = data.moves[2].move.name
-            moveThree.appendChild(movesObject3)
-            let movesObject4 = document.createElement("p")
-            movesObject4.textContent = data.moves[3].move.name
-            moveFour.appendChild(movesObject4)
-        })
-    })
+            var userMoves = function() {
+                let movesObject1 = document.createElement("p")
+                movesObject1.textContent = data.moves[0].move.name
+                moveOne.appendChild(movesObject1)
+                let movesObject2 = document.createElement("p")
+                movesObject2.textContent = data.moves[1].move.name
+                moveTwo.appendChild(movesObject2)
+                let movesObject3 = document.createElement("p")
+                movesObject3.textContent = data.moves[2].move.name
+                moveThree.appendChild(movesObject3)
+                let movesObject4 = document.createElement("p")
+                movesObject4.textContent = data.moves[3].move.name
+                moveFour.appendChild(movesObject4)
+            };
+            userMoves();
+        });
+    });
 };
 
 // getting from API and displaying opponent's pokemon and moves
@@ -348,11 +354,17 @@ let opponentInfo = () => {
             opponentPokemonPlaceholder.appendChild(opponentPokemonImage)
 
             //displaying random moves
-            var opponentMove = document.createElement("p")
-            opponentMove.textContent = data.moves[Math.floor(Math.random() * 10)].move.name
-            console.log(opponentMove)
-
-            randomUpdates.appendChild(opponentMove)
+            var enemyMoveDisplay = function() {
+                // var opponentMove = document.createElement("p")
+                enemyAttackName = data.moves[Math.floor(Math.random() * 10)].move.name
+                console.log(enemyAttackName);
+    
+                // randomUpdates.appendChild(opponentMove)
+            };
+            enemyMoveDisplay();
+            attack1.addEventListener("click", function() {
+                enemyMoveDisplay();
+            })
         })
     })
 };
