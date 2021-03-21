@@ -9,6 +9,10 @@
 
  /*battle related formatting*/
 
+
+ .grid-x {
+   width: 80vw;
+ }
 #userPokemonName {
 	text-transform: uppercase;
 	font-weight: 800;
