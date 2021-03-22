@@ -80,7 +80,7 @@ while (pokemon == opponentRandomPokemon) {
 };
 
 // updated health text
-var updateHealth = function() {
+var updateHealth = function () {
     // enemy health
     enemyHealthBar.setAttribute("aria-valuenow", enemyHealth);
     enemyHealthBar.setAttribute("aria-valuetext", enemyHealth);
@@ -119,17 +119,17 @@ var updateHealth = function() {
 };
 
 // user fight function to be called on button clicks
-var userFight = function(attackVal) {
+var userFight = function (attackVal) {
     console.log("fighting!");
-    enemyHealth = enemyHealth-attackVal;
+    enemyHealth = enemyHealth - attackVal;
 };
 
 // time interval used to wait until enemy attack to attack again
-var fightButtonClicks = function() {
+var fightButtonClicks = function () {
     for (var i = 0; i < attackButtons.length; i++) {
         attackButtons[i].disabled = true;
     };
-    setTimeout(function() {
+    setTimeout(function () {
         enemyFight();
         for (var i = 0; i < attackButtons.length; i++) {
             attackButtons[i].disabled = false;
@@ -139,15 +139,15 @@ var fightButtonClicks = function() {
 
 
 // enemy fight function 
-var enemyFight = function() {
+var enemyFight = function () {
     if (userHealth > 0 && enemyHealth > 0) {
         var num = Math.floor(Math.random() * 10) + 1;
         if (enemyAttackValue === 5) {
             if (num < 3) {
                 enemyAttackText.textContent = (`Incoming! ${opponentPokemon.textContent} attacked ${userPokemon.textContent} with ${enemyAttackName}!`);
-                userAttackText.textContent = (`${userPokemon.textContent} blocked ${enemyAttackName} from ${opponentPokemon.textContent}!`); 
+                userAttackText.textContent = (`${userPokemon.textContent} blocked ${enemyAttackName} from ${opponentPokemon.textContent}!`);
             } else {
-                userHealth = userHealth-enemyAttackValue;
+                userHealth = userHealth - enemyAttackValue;
                 enemyAttackText.textContent = (`Incoming! ${opponentPokemon.textContent} attacked ${userPokemon.textContent} with ${enemyAttackName}!`);
                 userAttackText.textContent = (`${userPokemon.textContent} got hit from ${opponentPokemon.textContent}'s ${enemyAttackName}!`);
                 updateHealth();
@@ -157,7 +157,7 @@ var enemyFight = function() {
                 enemyAttackText.textContent = (`Incoming! ${opponentPokemon.textContent} attacked ${userPokemon.textContent} with ${enemyAttackName}!`);
                 userAttackText.textContent = (`${userPokemon.textContent} blocked ${enemyAttackName} from ${opponentPokemon.textContent}!`);
             } else {
-                userHealth = userHealth-enemyAttackValue;
+                userHealth = userHealth - enemyAttackValue;
                 enemyAttackText.textContent = (`Incoming! ${opponentPokemon.textContent} attacked ${userPokemon.textContent} with ${enemyAttackName}!`);
                 userAttackText.textContent = (`${userPokemon.textContent} got hit from ${opponentPokemon.textContent}'s ${enemyAttackName}!`);
                 updateHealth();
@@ -167,7 +167,7 @@ var enemyFight = function() {
                 enemyAttackText.textContent = (`Incoming! ${opponentPokemon.textContent} attacked ${userPokemon.textContent} with ${enemyAttackName}!`);
                 userAttackText.textContent = (`${userPokemon.textContent} blocked ${enemyAttackName} from ${opponentPokemon.textContent}!`);
             } else {
-                userHealth = userHealth-enemyAttackValue;
+                userHealth = userHealth - enemyAttackValue;
                 enemyAttackText.textContent = (`Incoming! ${opponentPokemon.textContent} attacked ${userPokemon.textContent} with ${enemyAttackName}!`);
                 userAttackText.textContent = (`${userPokemon.textContent} got hit from ${opponentPokemon.textContent}'s ${enemyAttackName}!`);
                 updateHealth();
@@ -177,7 +177,7 @@ var enemyFight = function() {
 };
 
 // button attack 1 (value 5)
-attack1.addEventListener("click", function() {
+attack1.addEventListener("click", function () {
     console.log("fight button 1");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
@@ -195,7 +195,7 @@ attack1.addEventListener("click", function() {
 });
 
 // button attack 2 (value 10)
-attack2.addEventListener("click", function() {
+attack2.addEventListener("click", function () {
     console.log("fight button 2");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
@@ -213,7 +213,7 @@ attack2.addEventListener("click", function() {
 });
 
 // button attack 3 (value 15)
-attack3.addEventListener("click", function() {
+attack3.addEventListener("click", function () {
     console.log("fight button 3");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
@@ -231,7 +231,7 @@ attack3.addEventListener("click", function() {
 });
 
 // button attack 4 (value 5)
-attack4.addEventListener("click", function() {
+attack4.addEventListener("click", function () {
     console.log("fight button 4");
     var num = Math.floor(Math.random() * 10) + 1;
     console.log(num);
@@ -269,7 +269,7 @@ let displayRepos = (repos) => {
         // loop over user name
         let nameObject = repos[i].name
 
-        
+
         const name = Object.values(nameObject)
         // create an elememt to hold random user name
         let randomUserName = document.createElement("div");
@@ -304,9 +304,10 @@ let getCurrentInfo = () => {
     let apiURL = "https://pokeapi.co/api/v2/pokemon/" + userRandomPokemon;
     fetch(apiURL).then((response) => {
         response.json().then((data) => {
+            console.log(data)
             //displaying random user pokemon name with capital first letter
             userPokemon.textContent = userRandomPokemon.charAt(0).toUpperCase() + userRandomPokemon.slice(1)
- 
+
             //displaying random user pokemon picture
             var userPokemonImage = document.createElement("img")
             var imageURL = "./assets/images/" + userRandomPokemon + ".png"
@@ -316,7 +317,7 @@ let getCurrentInfo = () => {
             // console.log(userPokemonImage)
             userPokemonPlaceholder.appendChild(userPokemonImage)
             // enemyAttackName = data.moves[Math.floor(Math.random() * 10)].move.name
-            var userMoves = function() {
+            var userMoves = function () {
                 // let movesObject1 = document.createElement("p")
                 moveOne.textContent = data.moves[Math.floor(Math.random() * 10)].move.name
                 // moveOne.appendChild(movesObject1)
@@ -331,18 +332,30 @@ let getCurrentInfo = () => {
                 // moveFour.appendChild(movesObject4)
             };
             userMoves();
-            attack1.addEventListener("click", function() {
+            attack1.addEventListener("click", function () {
                 userMoves();
             });
-            attack2.addEventListener("click", function() {
+            attack2.addEventListener("click", function () {
                 userMoves();
             });
-            attack3.addEventListener("click", function() {
+            attack3.addEventListener("click", function () {
                 userMoves();
             });
-            attack4.addEventListener("click", function() {
+            attack4.addEventListener("click", function () {
                 userMoves();
             });
+            accuracyURL = data.moves[0].move.url
+            let getCurrentAccuracy = () => {
+                fetch(accuracyURL).then((test) => {
+                    test.json().then((info) => {
+                        console.log(info.accuracy)
+                        console.log(info)
+                    });
+                });
+            };
+            getCurrentAccuracy()
+
+
         });
     });
 };
@@ -366,24 +379,24 @@ let opponentInfo = () => {
             opponentPokemonPlaceholder.appendChild(opponentPokemonImage)
 
             //displaying random moves
-            var enemyMoveDisplay = function() {
+            var enemyMoveDisplay = function () {
                 // var opponentMove = document.createElement("p")
                 enemyAttackName = data.moves[Math.floor(Math.random() * 10)].move.name
                 console.log(enemyAttackName);
-    
+
                 // randomUpdates.appendChild(opponentMove)
             };
             enemyMoveDisplay();
-            attack1.addEventListener("click", function() {
+            attack1.addEventListener("click", function () {
                 enemyMoveDisplay();
             });
-            attack2.addEventListener("click", function() {
+            attack2.addEventListener("click", function () {
                 enemyMoveDisplay();
             });
-            attack3.addEventListener("click", function() {
+            attack3.addEventListener("click", function () {
                 enemyMoveDisplay();
             });
-            attack4.addEventListener("click", function() {
+            attack4.addEventListener("click", function () {
                 enemyMoveDisplay();
             });
         })
@@ -391,22 +404,22 @@ let opponentInfo = () => {
 };
 
 
-var gameEnd = function() {
+var gameEnd = function () {
     var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
-    var score = { 
+    var score = {
         score: userHealth,
         name: userName
     };
     highscores.push(score);
-    highscores.sort((a,b) => {
+    highscores.sort((a, b) => {
         return b.score - a.score;
     });
     highscores.splice(3);
     localStorage.setItem("highscores", JSON.stringify(highscores));
 };
 
-var modalOpen = function() {
-  modal.style.display = "block";
+var modalOpen = function () {
+    modal.style.display = "block";
 };
 
 
