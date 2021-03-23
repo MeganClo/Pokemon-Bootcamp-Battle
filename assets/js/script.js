@@ -130,7 +130,7 @@ var fightButtonClicks = function() {
         for (var i = 0; i < attackButtons.length; i++) {
             attackButtons[i].disabled = false;
         };
-    }, 3000);
+    }, 2000);
 };
 
 

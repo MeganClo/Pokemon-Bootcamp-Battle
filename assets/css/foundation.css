@@ -298,7 +298,10 @@ li:before {
     
 }
 
-
+#leader {
+  margin: auto;
+  
+}
 
 .callout .button {
   min-height: 50px;
